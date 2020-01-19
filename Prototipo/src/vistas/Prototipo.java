@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -20,8 +21,8 @@ public class Prototipo extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
-
+        Parent root = FXMLLoader.load(getClass().getResource("VendedorClientes.fxml"));
+        stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
         
