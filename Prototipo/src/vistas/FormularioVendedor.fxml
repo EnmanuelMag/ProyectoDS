@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <top>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Formulario Vendedor">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </top>
+         <center>
+            <VBox alignment="CENTER" maxWidth="600.0" minWidth="600.0" prefWidth="600.0" spacing="25.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTextField labelFloat="true" text="Nombres">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="286.0" text="Apellidos">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="310.0" text="Cedula/Pasaporte">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="334.0" text="Teléfono">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="358.0" text="Correo electrónico">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="382.0" text="Cedula/Pasaporte">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="406.0" text="Dirección domiliar">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXTextField labelFloat="true" layoutX="10.0" layoutY="430.0" text="Teléfono laboral">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </JFXTextField>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label text="Estado civil:">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <ComboBox prefHeight="35.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="526.0" spacing="10.0">
+                     <children>
+                        <Label text="Cargo laboral:">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Label>
+                        <ComboBox prefHeight="35.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXButton buttonType="RAISED" text="Guardar">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>
