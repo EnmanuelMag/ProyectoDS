@@ -32,13 +32,13 @@
                   <Hyperlink focusTraversable="false" layoutX="98.0" layoutY="391.0" text="No recuerdo la contraseña" textFill="#dad4d4" />
                </children>
             </AnchorPane>
-            <JFXButton focusTraversable="false" layoutX="82.0" layoutY="262.0" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Registrarse" textFill="#cdcdcd" />
+            <JFXButton focusTraversable="false" layoutX="82.0" layoutY="262.0" prefHeight="25.0" prefWidth="261.0" ripplerFill="#942a2a" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Registrarse" textFill="#cdcdcd" />
             <Label focusTraversable="false" layoutX="31.0" layoutY="45.0" prefHeight="49.0" prefWidth="239.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Bienvenido a &lt;NOMBRE&gt;" textFill="#dadada">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <JFXButton focusTraversable="false" layoutX="80.0" layoutY="172.0" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Diseño rápido" textFill="#cdcdcd" />
+            <JFXButton focusTraversable="false" layoutX="80.0" layoutY="172.0" prefHeight="25.0" prefWidth="261.0" ripplerFill="#942a2a" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Diseño rápido" textFill="#cdcdcd" />
          </children>
       </AnchorPane>
    </children>
