@@ -22,6 +22,7 @@ public class Prototipo extends Application {
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("VendedorClientes.fxml"));
+
         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
