@@ -3,17 +3,18 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="489.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="553.0" prefWidth="700.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
+      <AnchorPane prefHeight="502.0" prefWidth="791.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
          <children>
-            <AnchorPane layoutX="428.0" layoutY="24.0" prefHeight="442.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
+            <AnchorPane layoutX="428.0" layoutY="39.0" prefHeight="442.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
                <children>
                   <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="34.0" layoutY="144.0" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
                      <font>
@@ -23,22 +24,33 @@
                      <font>
                         <Font size="16.0" />
                      </font></JFXPasswordField>
-                  <JFXButton focusTraversable="false" layoutX="41.0" layoutY="336.0" prefHeight="25.0" prefWidth="261.0" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Iniciar Sesión" textFill="#cdcdcd" />
+                  <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="41.0" layoutY="336.0" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Iniciar Sesión" textFill="#cdcdcd" />
                   <Label focusTraversable="false" layoutX="104.0" layoutY="47.0" prefHeight="49.0" prefWidth="137.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Inicio de Sesión" textFill="#dadada">
                      <font>
                         <Font size="19.0" />
                      </font>
+                     <padding>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </padding>
                   </Label>
                   <Hyperlink focusTraversable="false" layoutX="98.0" layoutY="391.0" text="No recuerdo la contraseña" textFill="#dad4d4" />
                </children>
             </AnchorPane>
-            <JFXButton focusTraversable="false" layoutX="82.0" layoutY="262.0" prefHeight="25.0" prefWidth="261.0" ripplerFill="#942a2a" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Registrarse" textFill="#cdcdcd" />
-            <Label focusTraversable="false" layoutX="31.0" layoutY="45.0" prefHeight="49.0" prefWidth="239.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Bienvenido a &lt;NOMBRE&gt;" textFill="#dadada">
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="82.0" layoutY="277.0" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Registrarse" textFill="#cdcdcd" />
+            <Label focusTraversable="false" layoutX="31.0" layoutY="74.0" prefHeight="49.0" prefWidth="234.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Bienvenido a &lt;NOMBRE&gt;" textFill="#dadada">
                <font>
                   <Font size="19.0" />
                </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
             </Label>
-            <JFXButton focusTraversable="false" layoutX="80.0" layoutY="172.0" prefHeight="25.0" prefWidth="261.0" ripplerFill="#942a2a" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Diseño rápido" textFill="#cdcdcd" />
+            <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="80.0" layoutY="187.0" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Diseño rápido" textFill="#cdcdcd" />
+            <Label layoutX="775.0" layoutY="1.0" text="X" textFill="#c95858">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
