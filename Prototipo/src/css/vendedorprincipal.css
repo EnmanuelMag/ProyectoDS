@@ -1,0 +1,17 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.butonDisenos{
+    -fx-background-image: url(../recursos/botones/disenoVendedorB.png);
+}
+
+.butonClientes{
+    -fx-background-image: url(../recursos/botones/verClientesB.png);
+}
+
+

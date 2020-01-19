@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <padding>
+            <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+         </padding>
+         <center>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <JFXTreeView editable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: #000000;" stylesheets="@../css/vendedorclientes.css" />
+                  <JFXButton alignment="BOTTOM_CENTER" buttonType="RAISED" text="Ver Detalles">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </center>
+         <top>
+            <Label alignment="TOP_LEFT" text="Lista Clientes" BorderPane.alignment="TOP_LEFT">
+               <font>
+                  <Font size="78.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>
