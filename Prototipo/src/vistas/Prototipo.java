@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -21,13 +22,20 @@ public class Prototipo extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("VendedorClientes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("vendedorDashboard.fxml"));
 
         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
+        scene.setOnKeyPressed(e -> {
+            
+            if(e.getCode().equals(KeyCode.ESCAPE)){
+                stage.close();
+            }
         
+        });
         stage.setScene(scene);
+        
         stage.show();
     }
 
