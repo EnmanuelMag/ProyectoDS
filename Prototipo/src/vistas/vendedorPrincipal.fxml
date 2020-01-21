@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -10,9 +11,9 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="colorFondoDefault" stylesheets="@../css/base.css">
-         <children>
-            <VBox prefHeight="720.0" prefWidth="300.0" styleClass="colorAnchorPane" stylesheets="@../css/base.css">
+      <BorderPane prefHeight="200.0" prefWidth="200.0">
+         <left>
+            <VBox prefHeight="720.0" prefWidth="300.0" styleClass="colorAnchorPane" stylesheets="@../css/base.css" BorderPane.alignment="CENTER">
                <children>
                   <Label maxHeight="1.7976931348623157E308" prefHeight="75.0" prefWidth="300.0" styleClass="labelTituloPrincipal" stylesheets="@../css/base.css" text="VENDEDOR" textFill="WHITE">
                      <padding>
@@ -32,15 +33,25 @@
                   </JFXButton>
                </children>
             </VBox>
-            <Label prefHeight="75.0" prefWidth="980.0" styleClass="labelTituloSecundario" stylesheets="@../css/base.css" text="OPCION 1">
-               <padding>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </padding>
-               <font>
-                  <Font name="System Bold" size="22.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
+         </left>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <HBox prefHeight="75.0" prefWidth="200.0" styleClass="colorFondoDefault" stylesheets="@../css/base.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label prefHeight="75.0" prefWidth="980.0" styleClass="labelTituloSecundario" stylesheets="@../css/base.css" text="OPCION 1">
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </top>
+            </BorderPane>
+         </center>
+      </BorderPane>
    </children>
 </StackPane>

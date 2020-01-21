@@ -37,7 +37,7 @@
                </children>
             </AnchorPane>
             <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="82.0" layoutY="277.0" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Registrarse" textFill="#cdcdcd" />
-            <Label focusTraversable="false" layoutX="31.0" layoutY="74.0" prefHeight="49.0" prefWidth="234.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Bienvenido a &lt;NOMBRE&gt;" textFill="#dadada">
+            <Label focusTraversable="false" layoutX="156.0" layoutY="74.0" prefHeight="49.0" prefWidth="109.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Bienvenido" textFill="#dadada">
                <font>
                   <Font size="19.0" />
                </font>
