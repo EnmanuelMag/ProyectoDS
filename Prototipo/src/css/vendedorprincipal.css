@@ -53,9 +53,13 @@ and open the template in the editor.
 }
 
 .btnSecundario{
-    -fx-background-color:   #BE5A5A;
+    -fx-background-color:  #BE5A5A;
     -fx-font-family: System;
-    -fx-font-size: 16px;
+    -fx-font-size: 15px;
+    -fx-text-fill: WHITE;
+    -fx-border-width: 0pt;
+    -fx-border-radius: 0pt;
+    -fx-background-radius: 0pt;
 }
 
 .txtField{

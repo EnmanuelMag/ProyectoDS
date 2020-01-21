@@ -14,8 +14,8 @@
          <bottom>
             <HBox BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton buttonType="RAISED" prefHeight="37.0" prefWidth="986.0" styleClass="btnPrincipal" stylesheets="@../css/vendedorprincipal.css" text="Ver mas Detalles" />
-                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" prefHeight="37.0" prefWidth="986.0" styleClass="btnPrincipal" stylesheets="@../css/vendedorprincipal.css" text="Actualizar Lista" />
+                  <JFXButton buttonType="RAISED" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" prefWidth="986.0" styleClass="btnPrincipal" stylesheets="@../css/vendedorprincipal.css" text="Ver mas Detalles" />
+                  <JFXButton buttonType="RAISED" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="35.0" prefWidth="986.0" styleClass="btnPrincipal" stylesheets="@../css/vendedorprincipal.css" text="Actualizar Lista" />
                </children>
             </HBox>
          </bottom>
