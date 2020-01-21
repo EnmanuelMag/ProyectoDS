@@ -6,10 +6,13 @@
 package vistas;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -19,19 +22,18 @@ import javafx.stage.StageStyle;
  */
 public class Prototipo extends Application {
     
+    private Parent root;
+    
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("vendedorPrincipal.fxml"));
-
+        root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
+        
         stage.initStyle(StageStyle.UNDECORATED);
         
         Scene scene = new Scene(root);
-        scene.setOnKeyPressed(e -> {
-            
-            if(e.getCode().equals(KeyCode.ESCAPE)){
-                stage.close();
-            }
+        scene.setOnDragDetected((i)->{
+            scene.getRoot().setOpacity(0.5f);
         
         });
         stage.setScene(scene);
@@ -45,5 +47,6 @@ public class Prototipo extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+    
     
 }
