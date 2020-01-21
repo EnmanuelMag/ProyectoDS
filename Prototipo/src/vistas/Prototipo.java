@@ -22,7 +22,7 @@ public class Prototipo extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("AdminPrincipal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("vendedorPrincipal.fxml"));
 
         stage.initStyle(StageStyle.UNDECORATED);
         

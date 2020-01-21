@@ -1,17 +1,94 @@
 /*
- * Empty Stylesheet file.
- */
-
-.mainFxmlClass {
-
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-ene-2020, 23:16:29
+    Author     : Asus
+*/
+.colorAnchorPane{
+    -fx-background-color:  #311313;
 }
 
-.butonDisenos{
-    -fx-background-image: url(../recursos/botones/disenoVendedorB.png);
+.colorSubAnchorPane{
+    -fx-background-color:  #942A2A;
 }
 
-.butonClientes{
-    -fx-background-image: url(../recursos/botones/verClientesB.png);
+.colorFondoDefault{
+    -fx-background-color:  #e5e5e5;
+}
+
+.labelTituloPrincipal{
+    -fx-font-size: 24px;
+    -fx-font-family: System;
+    -fx-font-weight: bold;
+    -fx-background-color: #942A2A; 
+}
+
+.labelTituloSecundario{
+    -fx-background-color:  #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-width: bold;
+}
+
+.jfx-button-dash{
+    -fx-background-color: #4f2e2e;
+}
+
+.jfx-button-dash:hover{
+    -fx-background-color: #4f2e2e;
 }
 
 
+
+.btnPrincipal{
+    -fx-background-color:  #942A2A;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+    -fx-text-fill: WHITE;
+    -fx-border-width: 0pt;
+    -fx-border-radius: 0pt;
+    -fx-background-radius: 0pt;
+}
+
+.btnSecundario{
+    -fx-background-color:   #BE5A5A;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+
+.txtField{
+    
+    -jfx-unfocus-color: #ffffff;
+    -fx-prompt-text-fill: #b8b8b8;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+
+.txtField:focused{
+    -jfx-focus-color: #FBDADA;
+    -jfx-unfocus-color: #ffffff;
+    -fx-prompt-text-fill:  #BE5A5A;;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+
+.table-view {
+    -fx-base: #311313;
+    -fx-background-color: #ffe3e3;
+}
+
+table-view .table-cell{
+    -fx-font-size: 12;
+    -fx-text-fill: BLACK;
+    -fx-alignment: center;
+    
+}
+
+.table-view .column-header .label {
+    -fx-pref-height:50px;
+    -fx-font-size: 19;
+    -fx-text-fill: WHITE;
+    -fx-alignment: center;
+}
