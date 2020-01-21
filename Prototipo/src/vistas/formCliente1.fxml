@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="502.0" prefWidth="791.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
+         <children>
+            <Label focusTraversable="false" layoutX="367.0" layoutY="3.0" prefHeight="49.0" prefWidth="82.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Registro" textAlignment="CENTER" textFill="#dadada">
+               <font>
+                  <Font size="19.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+            <Label layoutX="775.0" layoutY="1.0" text="X" textFill="#c95858">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="54.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
+               <children>
+                  <VBox layoutX="18.0" layoutY="37.0" prefHeight="406.0" prefWidth="296.0">
+                     <children>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Nombre" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Apellido" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" promptText="Cédula/Pasaporte" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Teléfono" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Correo electrónico" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Dirección domiciliar" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <HBox alignment="CENTER_LEFT" prefWidth="286.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox focusColor="WHITE" prefHeight="37.0" prefWidth="287.0" promptText="Estado civil" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" unFocusColor="WHITE" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="416.0" layoutY="52.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
+               <children>
+                  <VBox layoutX="18.0" layoutY="37.0" prefHeight="240.0" prefWidth="296.0">
+                     <children>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Empresa" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" promptText="Dirección laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Cargo" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Teléfono laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <JFXComboBox focusColor="WHITE" labelFloat="true" prefHeight="37.0" prefWidth="286.0" promptText="Cargo Laboral" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" unFocusColor="WHITE" />
+                           </children>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Label focusTraversable="false" stylesheets="@../css/formCliente.css" text="Número de hijos">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Spinner prefHeight="25.0" prefWidth="73.0" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
+                           <VBox.margin>
+                              <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
