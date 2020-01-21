@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#iniciarSesion" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.InicioSesionController">
    <children>
       <AnchorPane prefHeight="502.0" prefWidth="791.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
          <children>
             <AnchorPane layoutX="428.0" layoutY="39.0" prefHeight="442.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
                <children>
-                  <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="34.0" layoutY="144.0" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                  <JFXTextField fx:id="textFieldUsuario" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="34.0" layoutY="144.0" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
                      <font>
                         <Font size="16.0" />
                      </font></JFXTextField>
@@ -24,7 +24,7 @@
                      <font>
                         <Font size="16.0" />
                      </font></JFXPasswordField>
-                  <JFXButton buttonType="RAISED" focusTraversable="false" layoutX="41.0" layoutY="336.0" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Iniciar Sesión" textFill="#cdcdcd" />
+                  <JFXButton fx:id="iniciarSesionB" buttonType="RAISED" focusTraversable="false" layoutX="41.0" layoutY="336.0" onAction="#iniciarSesion" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Iniciar Sesión" textFill="#cdcdcd" />
                   <Label focusTraversable="false" layoutX="104.0" layoutY="47.0" prefHeight="49.0" prefWidth="137.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Inicio de Sesión" textFill="#dadada">
                      <font>
                         <Font size="19.0" />
