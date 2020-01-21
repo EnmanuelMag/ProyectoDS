@@ -39,6 +39,8 @@ public class InicioSesionController implements Initializable {
     private JFXTextField textFieldUsuario;
     @FXML
     private JFXButton iniciarSesionB;
+    @FXML
+    private JFXButton registrarseButton;
 
     /**
      * Initializes the controller class.
@@ -74,6 +76,28 @@ public class InicioSesionController implements Initializable {
         stackPaneRoot.getScene().getWindow().hide();
         
     }
+
+    @FXML
+    private void registrarseHandle(ActionEvent event) throws IOException {
+        //formCliente1
+        
+        Parent root = FXMLLoader.load(getClass().getResource("formCliente1.fxml"));
+        
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        
+        stage.show();
+        stackPaneRoot.getScene().getWindow().hide();
+        
+    }
+
+    @FXML
+    private void iniciarSesion(KeyEvent event) {
+    }
+
     
     
         

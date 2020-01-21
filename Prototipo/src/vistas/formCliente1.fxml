@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FormCliente1Controller">
    <children>
       <AnchorPane prefHeight="502.0" prefWidth="791.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
          <children>
@@ -159,7 +159,7 @@
                               <Insets />
                            </opaqueInsets>
                         </HBox>
-                        <JFXButton buttonType="RAISED" focusTraversable="false" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
+                        <JFXButton fx:id="registrarmeButton" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
                            <VBox.margin>
                               <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
                            </VBox.margin>
