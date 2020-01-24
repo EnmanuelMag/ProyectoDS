@@ -40,16 +40,19 @@ and open the template in the editor.
 .txtField{
     
     -jfx-unfocus-color: #ffffff;
-    -fx-prompt-text-fill: #b8b8b8;
+    -fx-prompt-text-fill: #ffffff;
     -fx-font-family: System;
     -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
 }
 
 .txtField:focused{
     -jfx-focus-color: #FBDADA;
     -jfx-unfocus-color: #ffffff;
-    -fx-prompt-text-fill:  #BE5A5A;;
+    -fx-prompt-text-fill:  #BE5A5A;
     -fx-font-family: System;
     -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
 }
+
 

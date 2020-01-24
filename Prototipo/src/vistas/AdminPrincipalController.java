@@ -16,10 +16,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
 /**
  * FXML Controller class
  *
@@ -27,46 +27,55 @@ import javafx.stage.StageStyle;
  */
 public class AdminPrincipalController implements Initializable {
 
+    @FXML
+    private JFXButton registrarVendedorB;
+    @FXML
+    private JFXButton verClientesB;
+    @FXML
+    private JFXButton verEmpleadosB;
+    @FXML
+    private Label subtitulo;
+    @FXML
+    private StackPane centroStack;
+
     /**
      * Initializes the controller class.
      */
-    
-    @FXML
-    private JFXButton registrarVendedorB;
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
 
-    @FXML
-    private JFXButton verClientesB;
-
-    @FXML
-    private JFXButton verEmpleadosB;
-    
-    @FXML
-    private StackPane centroStack;
-    @FXML
-    private Label subtitulo;
-
-    @FXML
-    void verClientesButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ClientesRUD.fxml"));
-        centroStack.getChildren().clear();
-        subtitulo.setText("INFORMACIÓN DE CLIENTES");
-        centroStack.getChildren().add(root);
-    }
-    
     @FXML
     void registrarVendedorButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("FormularioVendedor.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FormVendedor.fxml"));
         centroStack.getChildren().clear();
-        subtitulo.setText("REGISTRAR NUEVO EMPLEADO");
+        subtitulo.setText("Registrar nuevo empleado");
         centroStack.getChildren().add(root);
+        
     }
+
     @FXML
-    void verEmpleadosButton(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("EmpleadosRUD.fxml"));
+    void verListaClientes(ActionEvent event) throws IOException {
+        
+        Parent root = FXMLLoader.load(getClass().getResource("vendedorListaClientes.fxml"));
+        subtitulo.setText("Listado de Clientes");
         centroStack.getChildren().clear();
-        subtitulo.setText("INFORMACIÓN DE EMPLEADOS");
         centroStack.getChildren().add(root);
+        
     }
+
+    @FXML
+    void verListaEmpleados(ActionEvent event) throws IOException {
+        this.subtitulo.setText("Listado de empleados");
+        URL u = getClass().getResource("AdminListaEmpleados.fxml");
+        
+        Parent root = FXMLLoader.load(u);
+        centroStack.getChildren().clear();
+        centroStack.getChildren().add(root);
+        
+    }
+
     @FXML
     void cerrarSesion(ActionEvent event) throws IOException {
         
@@ -82,12 +91,5 @@ public class AdminPrincipalController implements Initializable {
         centroStack.getScene().getWindow().hide();
         
     }
-    
-    
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
     
 }

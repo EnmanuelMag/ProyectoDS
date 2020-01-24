@@ -15,7 +15,7 @@ and open the template in the editor.
 .jfx-cmb{
     
     -jfx-unfocus-color: #ffffff;
-    -fx-prompt-text-fill: #b8b8b8;
+    -fx-prompt-text-fill: #ffffff;
     -fx-font-family: System;
     -fx-font-size: 16px;
 }

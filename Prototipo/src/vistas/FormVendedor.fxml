@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FormCliente1Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="colorFondoDefault" stylesheets="@../css/base.css">
+         <top>
+            <Label focusTraversable="false" stylesheets="@../css/iniciosesion.css" text="Registro" textAlignment="CENTER" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </top>
+         <center>
+            <HBox alignment="CENTER" spacing="25.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" maxHeight="400.0" prefWidth="300.0" spacing="20.0" styleClass="colorSubAnchorPane" stylesheets="@../css/base.css">
+                     <children>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Nombre" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Apellido" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" promptText="Cédula/Pasaporte" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Teléfono" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Dirección domiciliar" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Correo electrónico" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER" maxHeight="400.0" prefWidth="300.0" spacing="20.0" styleClass="colorSubAnchorPane" stylesheets="@../css/base.css">
+                     <children>
+                        <JFXComboBox focusColor="WHITE" prefHeight="37.0" prefWidth="287.0" promptText="Estado civil" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" unFocusColor="WHITE" />
+                        <JFXTextField focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Cargo" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Teléfono laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXButton fx:id="registrarmeButton" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="REGISTRAR" textFill="#cdcdcd">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="registrarmeButton1" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="LIMPIAR" textFill="#cdcdcd" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

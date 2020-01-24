@@ -60,9 +60,12 @@ public class ClientePrincipalController implements Initializable {
     }
 
     @FXML
-    private void nuevoDiseñoBHandle(ActionEvent event) {
+    private void nuevoDiseñoBHandle(ActionEvent event) throws IOException {
         
-        
+        Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
+        centroStack.getChildren().clear();
+        subtitulo.setText("DISEÑO NUEVO");
+        centroStack.getChildren().add(root);
     }
 
     @FXML

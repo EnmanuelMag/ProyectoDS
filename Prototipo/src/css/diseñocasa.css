@@ -1,0 +1,38 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+    
+    
+}
+
+.colorAnchorPane{
+    -fx-background-color:  #311313;
+}
+
+.colorSubAnchorPane{
+    -fx-background-color:  #942A2A;
+}
+
+.btnPrincipal{
+    -fx-background-color:  #ce4545;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+
+.btnSecundario{
+    -fx-background-color:   #BE5A5A;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+}
+
+.txtField{
+    -fx-background-color:   transparent;
+    -jfx-unfocus-color: #ffffff;
+    -fx-prompt-text-fill: #ffffff;
+    -fx-font-family: System;
+    -fx-font-size: 16px;
+    -fx-text-fill: #ffffff;
+}

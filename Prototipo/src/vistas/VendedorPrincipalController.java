@@ -69,11 +69,11 @@ public class VendedorPrincipalController implements Initializable {
     @FXML
     void disenarNuevaCasa(ActionEvent event) throws IOException {
         //this.tituloDash.setText("Diseño de Casa");
-        Parent root = FXMLLoader.load(getClass().getResource("EmpleadosRUD.fxml"));
+        /*Parent root = FXMLLoader.load(getClass().getResource("EmpleadosRUD.fxml"));
        
         centroStack.getChildren().clear();
         centroStack.getChildren().add(root);
-    }
+    */}
     @FXML
     void cerrarSesion(ActionEvent event) throws IOException {
         

@@ -41,6 +41,8 @@ public class InicioSesionController implements Initializable {
     private JFXButton iniciarSesionB;
     @FXML
     private JFXButton registrarseButton;
+    @FXML
+    private JFXButton diseñoRapidoB;
 
     /**
      * Initializes the controller class.
@@ -48,6 +50,13 @@ public class InicioSesionController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        stackPaneRoot.setOnKeyPressed((u)->{
+            if (u.getCode().equals(KeyCode.ESCAPE)){
+                System.exit(0);
+            }
+        });
+        
+        
     }    
 
 
@@ -96,6 +105,23 @@ public class InicioSesionController implements Initializable {
 
     @FXML
     private void iniciarSesion(KeyEvent event) {
+    }
+
+    @FXML
+    private void abrirDiseñoRapido(ActionEvent event) throws IOException {
+        
+         
+        Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
+        
+        Stage stage=new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        
+        stage.show();
+        stackPaneRoot.getScene().getWindow().hide();
+        
     }
 
     
