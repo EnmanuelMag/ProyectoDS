@@ -25,6 +25,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TreeTableView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -41,16 +42,12 @@ public class VendedorPrincipalController implements Initializable {
     private Label tituloDash;
     
     @FXML
-    private TreeTableView listaClientes;
-    
-    @FXML
     private JFXButton verClientesB;
 
     @FXML
-    private JFXButton disenoCasaB;
-    
-    @FXML
     private StackPane centroStack;
+    @FXML
+    private JFXButton diseñarCasaB;
 
     /**
      * Initializes the controller class.
@@ -58,7 +55,7 @@ public class VendedorPrincipalController implements Initializable {
      
     @FXML
     void verListaClientes(ActionEvent event) throws IOException {
-        this.tituloDash.setText("Listado de Clientes");
+        this.tituloDash.setText("LISTADO DE CLIENTES");
         URL u = getClass().getResource("vendedorListaClientes.fxml");
         
         Parent root = FXMLLoader.load(u);
@@ -68,12 +65,11 @@ public class VendedorPrincipalController implements Initializable {
     }
     @FXML
     void disenarNuevaCasa(ActionEvent event) throws IOException {
-        //this.tituloDash.setText("Diseño de Casa");
-        /*Parent root = FXMLLoader.load(getClass().getResource("EmpleadosRUD.fxml"));
-       
+        Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
         centroStack.getChildren().clear();
+        this.tituloDash.setText("DISEÑO NUEVO");
         centroStack.getChildren().add(root);
-    */}
+    }
     @FXML
     void cerrarSesion(ActionEvent event) throws IOException {
         
@@ -95,4 +91,5 @@ public class VendedorPrincipalController implements Initializable {
         // TODO
         
     } 
+
 }

@@ -50,7 +50,7 @@ public class AdminPrincipalController implements Initializable {
     void registrarVendedorButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("FormVendedor.fxml"));
         centroStack.getChildren().clear();
-        subtitulo.setText("Registrar nuevo empleado");
+        subtitulo.setText("REGISTRAR NUEVO EMPLEADO");
         centroStack.getChildren().add(root);
         
     }
@@ -59,7 +59,7 @@ public class AdminPrincipalController implements Initializable {
     void verListaClientes(ActionEvent event) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("vendedorListaClientes.fxml"));
-        subtitulo.setText("Listado de Clientes");
+        subtitulo.setText("LISTADO DE CLIENTES");
         centroStack.getChildren().clear();
         centroStack.getChildren().add(root);
         
@@ -67,7 +67,7 @@ public class AdminPrincipalController implements Initializable {
 
     @FXML
     void verListaEmpleados(ActionEvent event) throws IOException {
-        this.subtitulo.setText("Listado de empleados");
+        this.subtitulo.setText("LISTADO DE EMPLEADOS");
         URL u = getClass().getResource("AdminListaEmpleados.fxml");
         
         Parent root = FXMLLoader.load(u);
