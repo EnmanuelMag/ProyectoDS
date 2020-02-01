@@ -18,7 +18,7 @@ USE `Prototipo` ;
 -- Table `Prototipo`.`EstadoCivil`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`EstadoCivil` (
-  `estadoCivilId` INT NOT NULL,
+  `estadoCivilId` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`estadoCivilId`))
 ENGINE = InnoDB;
@@ -28,7 +28,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Pais`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Pais` (
-  `paisId` INT NOT NULL,
+  `paisId` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`paisId`))
 ENGINE = InnoDB;
@@ -38,7 +38,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Provincia`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Provincia` (
-  `provinciaId` INT NOT NULL,
+  `provinciaId` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(100) NOT NULL,
   `paisId` INT NOT NULL,
   PRIMARY KEY (`provinciaId`),
@@ -72,7 +72,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Direccion`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Direccion` (
-  `direccionId` INT NOT NULL,
+  `direccionId` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(100) NOT NULL,
   `cantonId` INT NOT NULL,
   PRIMARY KEY (`direccionId`),
@@ -89,7 +89,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Cargo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Cargo` (
-  `cargoId` INT NOT NULL,
+  `cargoId` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`cargoId`))
 ENGINE = InnoDB;
@@ -99,7 +99,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Empleado`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Empleado` (
-  `empleadoId` INT NOT NULL,
+  `empleadoId` INT NOT NULL AUTO_INCREMENT,
   `nombres` VARCHAR(100) NOT NULL,
   `apellidos` VARCHAR(100) NOT NULL,
   `telefono` VARCHAR(20) NOT NULL,
@@ -134,7 +134,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Empresa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Empresa` (
-  `empresaId` INT NOT NULL,
+  `empresaId` INT NOT NULL AUTO_INCREMENT,
   `ruc` VARCHAR(13) NOT NULL,
   `razonSocial` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`empresaId`))
@@ -145,7 +145,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Cliente` (
-  `clienteId` INT NOT NULL,
+  `clienteId` INT NOT NULL AUTO_INCREMENT,
   `nombres` VARCHAR(100) NOT NULL,
   `apellidos` VARCHAR(100) NOT NULL,
   `telefono` VARCHAR(20) NOT NULL,
@@ -187,10 +187,10 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Prototipo`.`CasaBase`
+-- Table `Prototipo`.`CasaBuilder`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Prototipo`.`CasaBase` (
-  `casaBaseId` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `Prototipo`.`CasaBuilder` (
+  `casaBaseId` INT NOT NULL AUTO_INCREMENT,
   `metrosCuadrados` DOUBLE NOT NULL,
   `numPlantas` INT NOT NULL,
   `esquinera` VARCHAR(1) NOT NULL,
@@ -204,27 +204,16 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Prototipo`.`Adicional`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Prototipo`.`Adicional` (
-  `adicionalId` INT NOT NULL,
-  `descripcion` VARCHAR(45) NOT NULL,
-  `precio` DOUBLE NOT NULL,
-  PRIMARY KEY (`adicionalId`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `Prototipo`.`CasaCreada`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`CasaCreada` (
-  `casaAdicionalId` INT NOT NULL,
+  `casaAdicionalId` INT NOT NULL AUTO_INCREMENT,
   `Casa_casaId` INT NOT NULL,
   PRIMARY KEY (`casaAdicionalId`),
   INDEX `fk_Casa_has_Adicional_Casa1_idx` (`Casa_casaId` ASC) VISIBLE,
   CONSTRAINT `fk_Casa_has_Adicional_Casa1`
     FOREIGN KEY (`Casa_casaId`)
-    REFERENCES `Prototipo`.`CasaBase` (`casaBaseId`)
+    REFERENCES `Prototipo`.`CasaBuilder` (`casaBaseId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -234,7 +223,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`Cotizacion`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`Cotizacion` (
-  `cotizacionId` INT NOT NULL,
+  `cotizacionId` INT NOT NULL AUTO_INCREMENT,
   `clienteId` INT NOT NULL,
   `casaCreadaId` INT NOT NULL,
   `fecha` DATE NOT NULL,
@@ -259,7 +248,7 @@ ENGINE = InnoDB;
 -- Table `Prototipo`.`EmpleadoCreaCasa`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Prototipo`.`EmpleadoCreaCasa` (
-  `empleadoCasaCreadaId` INT NOT NULL,
+  `empleadoCasaCreadaId` INT NOT NULL AUTO_INCREMENT,
   `empleadoId` INT NOT NULL,
   `fecha` DATE NOT NULL,
   `casaCreada` INT NOT NULL,
@@ -280,23 +269,107 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `Prototipo`.`CasaCreada_has_Adicional`
+-- Table `Prototipo`.`AdicionalBanios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `Prototipo`.`CasaCreada_has_Adicional` (
-  `casaCreadaHasAdicionalId` VARCHAR(45) NOT NULL,
+CREATE TABLE IF NOT EXISTS `Prototipo`.`AdicionalBanios` (
+  `adicionalBaniosId` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(100) NULL,
+  `precio` DOUBLE NULL,
+  PRIMARY KEY (`adicionalBaniosId`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Prototipo`.`AdicionalGriferia`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Prototipo`.`AdicionalGriferia` (
+  `adicionalGriferiaId` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(100) NULL,
+  `precio` DOUBLE NULL,
+  PRIMARY KEY (`adicionalGriferiaId`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Prototipo`.`AdicionalIluminacion`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Prototipo`.`AdicionalIluminacion` (
+  `adicionalIluminacionId` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(100) NULL,
+  `precio` DOUBLE NULL,
+  PRIMARY KEY (`adicionalIluminacionId`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Prototipo`.`AdicionalTecho`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Prototipo`.`AdicionalTecho` (
+  `adicionalTechoId` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(100) NULL,
+  `precio` DOUBLE NULL,
+  PRIMARY KEY (`adicionalTechoId`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Prototipo`.`AdicionalPiso`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Prototipo`.`AdicionalPiso` (
+  `adicionalPisoId` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(100) NULL,
+  `precio` DOUBLE NULL,
+  PRIMARY KEY (`adicionalPisoId`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `Prototipo`.`CasaCreada_Adicional`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `Prototipo`.`CasaCreada_Adicional` (
+  `CasaCreada_Adicional` INT NOT NULL AUTO_INCREMENT,
   `casaCreadaId` INT NOT NULL,
-  `adicionalId` INT NULL,
-  PRIMARY KEY (`casaCreadaHasAdicionalId`),
-  INDEX `fk_CasaCreada_has_Adicional_Adicional1_idx` (`adicionalId` ASC) VISIBLE,
+  `adicionalId` INT NOT NULL,
+  `adicionalBaniosId` INT NULL,
+  `adicionalGriferiaId` INT NULL,
+  `adicionalIluminacionId` INT NULL,
+  `adicionalTechoId` INT NULL,
+  `adicionalPisoId` INT NULL,
+  PRIMARY KEY (`CasaCreada_Adicional`),
   INDEX `fk_CasaCreada_has_Adicional_CasaCreada1_idx` (`casaCreadaId` ASC) VISIBLE,
+  INDEX `fk_CasaCreada_Adicional_AdicionalBanios1_idx` (`adicionalBaniosId` ASC) VISIBLE,
+  INDEX `fk_CasaCreada_Adicional_AdicionalGriferia1_idx` (`adicionalGriferiaId` ASC) VISIBLE,
+  INDEX `fk_CasaCreada_Adicional_AdicionalIluminacion1_idx` (`adicionalIluminacionId` ASC) VISIBLE,
+  INDEX `fk_CasaCreada_Adicional_AdicionalTecho1_idx` (`adicionalTechoId` ASC) VISIBLE,
+  INDEX `fk_CasaCreada_Adicional_AdicionalPiso1_idx` (`adicionalPisoId` ASC) VISIBLE,
   CONSTRAINT `fk_CasaCreada_has_Adicional_CasaCreada1`
     FOREIGN KEY (`casaCreadaId`)
     REFERENCES `Prototipo`.`CasaCreada` (`casaAdicionalId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_CasaCreada_has_Adicional_Adicional1`
-    FOREIGN KEY (`adicionalId`)
-    REFERENCES `Prototipo`.`Adicional` (`adicionalId`)
+  CONSTRAINT `fk_CasaCreada_Adicional_AdicionalBanios1`
+    FOREIGN KEY (`adicionalBaniosId`)
+    REFERENCES `Prototipo`.`AdicionalBanios` (`adicionalBaniosId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CasaCreada_Adicional_AdicionalGriferia1`
+    FOREIGN KEY (`adicionalGriferiaId`)
+    REFERENCES `Prototipo`.`AdicionalGriferia` (`adicionalGriferiaId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CasaCreada_Adicional_AdicionalIluminacion1`
+    FOREIGN KEY (`adicionalIluminacionId`)
+    REFERENCES `Prototipo`.`AdicionalIluminacion` (`adicionalIluminacionId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CasaCreada_Adicional_AdicionalTecho1`
+    FOREIGN KEY (`adicionalTechoId`)
+    REFERENCES `Prototipo`.`AdicionalTecho` (`adicionalTechoId`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_CasaCreada_Adicional_AdicionalPiso1`
+    FOREIGN KEY (`adicionalPisoId`)
+    REFERENCES `Prototipo`.`AdicionalPiso` (`adicionalPisoId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
