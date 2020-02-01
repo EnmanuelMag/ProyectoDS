@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="980.0" styleClass="colorAnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FormCliente1Controller">
+<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="645.0" prefWidth="980.0" styleClass="colorAnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.DiseñoCasaController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="colorAnchorPane" stylesheets="@../css/base.css">
          <top>
@@ -34,7 +34,7 @@
                <children>
                   <VBox prefHeight="400.0" prefWidth="350.0" spacing="15.0">
                      <children>
-                        <JFXComboBox focusColor="WHITE" labelFloat="true" prefHeight="50.0" prefWidth="350.0" promptText="Casa Base" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" />
+                        <JFXComboBox fx:id="comboCasaBase" focusColor="WHITE" labelFloat="true" prefHeight="50.0" prefWidth="350.0" promptText="Casa Base" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" />
                         <VBox alignment="CENTER" maxHeight="470.0" prefHeight="466.0" prefWidth="350.0" spacing="20.0" styleClass="colorSubAnchorPane" stylesheets="@../css/base.css">
                            <children>
                               <GridPane hgap="10.0" vgap="20.0">
@@ -57,19 +57,19 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Spinner GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <Spinner fx:id="habitacionesSp" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                                     <Label text="Baños" textFill="WHITE" GridPane.rowIndex="2">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Spinner GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <Spinner fx:id="baniosSp" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                                     <Label text="Orientación" textFill="WHITE" GridPane.rowIndex="3">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Spinner GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Spinner fx:id="orientacionSp" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                                     <Label text="Posición" textFill="WHITE" GridPane.rowIndex="4">
                                        <font>
                                           <Font size="18.0" />
@@ -80,12 +80,12 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <JFXToggleButton text="Pequeño" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                    <JFXToggleButton fx:id="patioTb" text="Pequeño" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
                                     </JFXToggleButton>
-                                    <JFXToggleButton text="Esquinera" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <JFXToggleButton fx:id="posicionTb" text="Esquinera" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -95,7 +95,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Label>
-                                    <Spinner layoutX="155.0" layoutY="63.0" GridPane.columnIndex="1" />
+                                    <Spinner fx:id="superficieSp" editable="true" layoutX="155.0" layoutY="63.0" GridPane.columnIndex="1" />
                                  </children>
                               </GridPane>
                            </children>
@@ -146,7 +146,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <JFXToggleButton text="Si" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                              <JFXToggleButton fx:id="banoTb" text="Si" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -156,15 +156,15 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <RadioButton mnemonicParsing="false" />
-                              <RadioButton layoutX="10.0" layoutY="13.0" mnemonicParsing="false" GridPane.rowIndex="1" />
-                              <RadioButton layoutX="10.0" layoutY="56.0" mnemonicParsing="false" GridPane.rowIndex="2" />
-                              <RadioButton mnemonicParsing="false" GridPane.rowIndex="3" />
-                              <RadioButton mnemonicParsing="false" GridPane.rowIndex="4" />
-                              <JFXComboBox focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" />
-                              <JFXComboBox focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXComboBox focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXComboBox focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <RadioButton fx:id="enPiso" mnemonicParsing="false" />
+                              <RadioButton fx:id="enGasfiteria" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="enIluminacion" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="enTecho" mnemonicParsing="false" GridPane.rowIndex="3" />
+                              <RadioButton fx:id="enBaño" mnemonicParsing="false" GridPane.rowIndex="4" />
+                              <JFXComboBox fx:id="pisosCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" />
+                              <JFXComboBox fx:id="gasfiteriaCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXComboBox fx:id="iluminacionCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXComboBox fx:id="techoCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                         <JFXButton fx:id="registrarmeButton" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="REGISTRAR" textFill="#cdcdcd">
@@ -172,7 +172,7 @@
                               <Insets />
                            </VBox.margin>
                         </JFXButton>
-                        <JFXButton fx:id="registrarmeButton1" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="LIMPIAR" textFill="#cdcdcd" />
+                        <JFXButton fx:id="limpiarButton" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="LIMPIAR" textFill="#cdcdcd" />
                      </children>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

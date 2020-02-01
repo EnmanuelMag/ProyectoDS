@@ -18,12 +18,14 @@ import javafx.scene.layout.StackPane;
  *
  * @author Josue
  */
-public class FormCliente1Controller implements Initializable {
+public class FormVendedorController implements Initializable {
 
     @FXML
     private StackPane stackPaneRoot;
     @FXML
     private JFXButton registrarmeButton;
+    @FXML
+    private JFXButton registrarmeButton1;
 
     /**
      * Initializes the controller class.

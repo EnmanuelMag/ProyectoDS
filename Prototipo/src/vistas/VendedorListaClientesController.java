@@ -5,25 +5,16 @@
  */
 package vistas;
 
-import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.StackPane;
 
 /**
  * FXML Controller class
  *
  * @author Josue
  */
-public class FormCliente1Controller implements Initializable {
-
-    @FXML
-    private StackPane stackPaneRoot;
-    @FXML
-    private JFXButton registrarmeButton;
+public class VendedorListaClientesController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -32,9 +23,5 @@ public class FormCliente1Controller implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
-    @FXML
-    private void registrarmeHandle(ActionEvent event) {
-    }
     
 }

@@ -38,22 +38,15 @@ import javafx.stage.StageStyle;
  */
 public class VendedorPrincipalController implements Initializable {
     //980-645
-    @FXML
     private Label tituloDash;
     
-    @FXML
-    private JFXButton verClientesB;
 
-    @FXML
     private StackPane centroStack;
-    @FXML
-    private JFXButton diseñarCasaB;
 
     /**
      * Initializes the controller class.
      */
      
-    @FXML
     void verListaClientes(ActionEvent event) throws IOException {
         this.tituloDash.setText("LISTADO DE CLIENTES");
         URL u = getClass().getResource("vendedorListaClientes.fxml");
@@ -63,14 +56,12 @@ public class VendedorPrincipalController implements Initializable {
         centroStack.getChildren().add(root);
         
     }
-    @FXML
     void disenarNuevaCasa(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
         centroStack.getChildren().clear();
         this.tituloDash.setText("DISEÑO NUEVO");
         centroStack.getChildren().add(root);
     }
-    @FXML
     void cerrarSesion(ActionEvent event) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
