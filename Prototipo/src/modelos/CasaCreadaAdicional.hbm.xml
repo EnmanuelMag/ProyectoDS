@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.CasaCreadaAdicional" table="CasaCreada_Adicional" catalog="Prototipo" optimistic-lock="version">
+        <id name="casaCreadaAdicional" type="int">
+            <column name="CasaCreada_Adicional" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="adicionalBanios" class="modelos.AdicionalBanios" fetch="select">
+            <column name="adicionalBaniosId" />
+        </many-to-one>
+        <many-to-one name="adicionalGriferia" class="modelos.AdicionalGriferia" fetch="select">
+            <column name="adicionalGriferiaId" />
+        </many-to-one>
+        <many-to-one name="adicionalIluminacion" class="modelos.AdicionalIluminacion" fetch="select">
+            <column name="adicionalIluminacionId" />
+        </many-to-one>
+        <many-to-one name="adicionalPiso" class="modelos.AdicionalPiso" fetch="select">
+            <column name="adicionalPisoId" />
+        </many-to-one>
+        <many-to-one name="adicionalTecho" class="modelos.AdicionalTecho" fetch="select">
+            <column name="adicionalTechoId" />
+        </many-to-one>
+        <many-to-one name="casaCreada" class="modelos.CasaCreada" fetch="select">
+            <column name="casaCreadaId" not-null="true" />
+        </many-to-one>
+        <property name="adicionalId" type="int">
+            <column name="adicionalId" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

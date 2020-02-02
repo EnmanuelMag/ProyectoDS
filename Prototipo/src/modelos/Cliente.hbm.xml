@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Cliente" table="Cliente" catalog="Prototipo" optimistic-lock="version">
+        <id name="clienteId" type="int">
+            <column name="clienteId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cargo" class="modelos.Cargo" fetch="select">
+            <column name="cargoId" />
+        </many-to-one>
+        <many-to-one name="direccion" class="modelos.Direccion" fetch="select">
+            <column name="direccionId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="empresa" class="modelos.Empresa" fetch="select">
+            <column name="empresaId" />
+        </many-to-one>
+        <many-to-one name="estadoCivil" class="modelos.EstadoCivil" fetch="select">
+            <column name="estadoCivilId" not-null="true" />
+        </many-to-one>
+        <property name="nombres" type="string">
+            <column name="nombres" length="100" not-null="true" />
+        </property>
+        <property name="apellidos" type="string">
+            <column name="apellidos" length="100" not-null="true" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="telefono" length="20" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="100" not-null="true" />
+        </property>
+        <property name="activo" type="string">
+            <column name="activo" length="1" not-null="true" />
+        </property>
+        <property name="identificador" type="string">
+            <column name="identificador" length="45" not-null="true" />
+        </property>
+        <property name="telefTrabajo" type="string">
+            <column name="telefTrabajo" length="45" not-null="true" />
+        </property>
+        <property name="numHijos" type="int">
+            <column name="numHijos" not-null="true" />
+        </property>
+        <set name="cotizacions" table="Cotizacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="clienteId" not-null="true" />
+            </key>
+            <one-to-many class="modelos.Cotizacion" />
+        </set>
+    </class>
+</hibernate-mapping>
