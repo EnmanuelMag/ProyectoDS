@@ -113,27 +113,27 @@ public class DiseñoCasaController implements Initializable {
         enBaño.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                banoTb.setDisable(wasPreviouslySelected);
+                banoTb.setDisable(!isNowSelected);
             }});
         enGasfiteria.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                gasfiteriaCombo.setDisable(wasPreviouslySelected);
+                gasfiteriaCombo.setDisable(!isNowSelected);
             }});
         enIluminacion.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                iluminacionCombo.setDisable(wasPreviouslySelected);
+                iluminacionCombo.setDisable(!isNowSelected);
             }});
         enPiso.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                pisosCombo.setDisable(wasPreviouslySelected);
+                pisosCombo.setDisable(!isNowSelected);
             }});
         enTecho.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                techoCombo.setDisable(wasPreviouslySelected);
+                techoCombo.setDisable(!isNowSelected);
             }});
         
         patioTb.selectedProperty().addListener(((observable, oldValue, newValue) -> {

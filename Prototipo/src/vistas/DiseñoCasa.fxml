@@ -85,7 +85,7 @@
                                           <Font size="14.0" />
                                        </font>
                                     </JFXToggleButton>
-                                    <JFXToggleButton fx:id="posicionTb" text="Esquinera" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <JFXToggleButton fx:id="posicionTb" text="No Esquinera" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                        <font>
                                           <Font size="14.0" />
                                        </font>
@@ -146,7 +146,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <JFXToggleButton fx:id="banoTb" text="Si" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                              <JFXToggleButton fx:id="banoTb" disable="true" text="Si" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -161,10 +161,10 @@
                               <RadioButton fx:id="enIluminacion" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" GridPane.rowIndex="2" />
                               <RadioButton fx:id="enTecho" mnemonicParsing="false" GridPane.rowIndex="3" />
                               <RadioButton fx:id="enBaño" mnemonicParsing="false" GridPane.rowIndex="4" />
-                              <JFXComboBox fx:id="pisosCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" />
-                              <JFXComboBox fx:id="gasfiteriaCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                              <JFXComboBox fx:id="iluminacionCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                              <JFXComboBox fx:id="techoCombo" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <JFXComboBox fx:id="pisosCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" />
+                              <JFXComboBox fx:id="gasfiteriaCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXComboBox fx:id="iluminacionCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <JFXComboBox fx:id="techoCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                         <JFXButton fx:id="registrarmeButton" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="REGISTRAR" textFill="#cdcdcd">
