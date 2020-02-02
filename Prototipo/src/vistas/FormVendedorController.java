@@ -6,8 +6,10 @@
 package vistas;
 
 import com.jfoenix.controls.JFXButton;
+
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,13 +20,16 @@ import javafx.scene.layout.StackPane;
 /**
  * FXML Controller class
  *
- * @author Asus
+
+ * @author Josue
+
  */
 public class FormVendedorController implements Initializable {
 
     @FXML
     private StackPane stackPaneRoot;
     @FXML
+
     private JFXTextField nombreLbl;
     @FXML
     private JFXTextField apellidoLbl;
@@ -46,6 +51,7 @@ public class FormVendedorController implements Initializable {
     private JFXButton registrarBtn;
     @FXML
     private JFXButton limpiarBtn;
+
 
     /**
      * Initializes the controller class.

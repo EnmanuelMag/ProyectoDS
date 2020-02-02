@@ -9,18 +9,18 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Spinner;
+
 import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -58,6 +58,7 @@ public class FormCliente1Controller implements Initializable {
     @FXML
     private JFXButton registrarmeBtn;
 
+
     /**
      * Initializes the controller class.
      */
@@ -67,21 +68,7 @@ public class FormCliente1Controller implements Initializable {
     }    
 
     @FXML
-    private void registrarmeHandle(ActionEvent event) throws IOException {
-        
-        Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
-        
-        Stage stage=new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
-        
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        
-        stage.show();
-        stackPaneRoot.getScene().getWindow().hide();
-        
+    private void registrarmeHandle(ActionEvent event) {
     }
-    
-    
     
 }
