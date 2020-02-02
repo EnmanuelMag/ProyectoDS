@@ -6,11 +6,20 @@
 package vistas;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Spinner;
+
 import javafx.scene.layout.StackPane;
 
 /**
@@ -23,7 +32,32 @@ public class FormCliente1Controller implements Initializable {
     @FXML
     private StackPane stackPaneRoot;
     @FXML
-    private JFXButton registrarmeButton;
+    private JFXTextField nombreLbl;
+    @FXML
+    private JFXTextField apellidoLbl;
+    @FXML
+    private JFXTextField telefLbl;
+    @FXML
+    private JFXTextField correoLbl;
+    @FXML
+    private JFXTextField direccionLbl;
+    @FXML
+    private JFXComboBox<?> estadoCivilCmb;
+    @FXML
+    private JFXTextField empresaLbl;
+    @FXML
+    private JFXTextField direccionLaboralLbl;
+    @FXML
+    private JFXTextField cargoLbl;
+    @FXML
+    private JFXTextField telefonoLaboralLbl;
+    @FXML
+    private JFXComboBox<?> cargoLaboralCmb;
+    @FXML
+    private Spinner<?> numeroHijosSp;
+    @FXML
+    private JFXButton registrarmeBtn;
+
 
     /**
      * Initializes the controller class.
