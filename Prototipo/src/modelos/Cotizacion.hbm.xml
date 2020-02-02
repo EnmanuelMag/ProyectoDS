@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Cotizacion" table="Cotizacion" catalog="Prototipo" optimistic-lock="version">
+        <id name="cotizacionId" type="int">
+            <column name="cotizacionId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="casaCreada" class="modelos.CasaCreada" fetch="select">
+            <column name="casaCreadaId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="cliente" class="modelos.Cliente" fetch="select">
+            <column name="clienteId" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="date">
+            <column name="fecha" length="10" not-null="true" />
+        </property>
+        <property name="precio" type="double">
+            <column name="precio" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

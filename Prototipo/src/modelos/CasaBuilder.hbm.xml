@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.CasaBuilder" table="CasaBuilder" catalog="Prototipo" optimistic-lock="version">
+        <id name="casaBaseId" type="java.lang.Integer">
+            <column name="casaBaseId" />
+            <generator class="identity" />
+        </id>
+        <property name="metrosCuadrados" type="double">
+            <column name="metrosCuadrados" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="numPlantas" type="int">
+            <column name="numPlantas" not-null="true" />
+        </property>
+        <property name="esquinera" type="string">
+            <column name="esquinera" length="1" not-null="true" />
+        </property>
+        <property name="orientacion" type="string">
+            <column name="orientacion" length="45" not-null="true" />
+        </property>
+        <property name="patio" type="string">
+            <column name="patio" length="1" not-null="true" />
+        </property>
+        <property name="numHabitaciones" type="int">
+            <column name="numHabitaciones" not-null="true" />
+        </property>
+        <property name="numBanios" type="int">
+            <column name="numBanios" not-null="true" />
+        </property>
+        <property name="precio" type="double">
+            <column name="precio" precision="22" scale="0" not-null="true" />
+        </property>
+        <set name="casaCreadas" table="CasaCreada" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Casa_casaId" not-null="true" />
+            </key>
+            <one-to-many class="modelos.CasaCreada" />
+        </set>
+    </class>
+</hibernate-mapping>
