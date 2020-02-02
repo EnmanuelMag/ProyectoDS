@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FormCliente1Controller">
+<StackPane fx:id="stackPaneRoot" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vistas.FormCliente1Controller">
    <children>
-      <AnchorPane prefHeight="502.0" prefWidth="791.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
+      <AnchorPane prefHeight="592.0" prefWidth="791.0" styleClass="colorAnchorPane" stylesheets="@../css/iniciosesion.css">
          <children>
             <Label focusTraversable="false" layoutX="367.0" layoutY="3.0" prefHeight="49.0" prefWidth="82.0" styleClass="lblPrincipal" stylesheets="@../css/iniciosesion.css" text="Registro" textAlignment="CENTER" textFill="#dadada">
                <font>
@@ -24,12 +24,12 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <Label layoutX="775.0" layoutY="1.0" text="X" textFill="#c95858">
+            <Label layoutX="775.0" layoutY="1.0" onMouseClicked="#exitHandle" text="X" textFill="#c95858" fx:id="xLbl">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <AnchorPane layoutX="54.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
+            <AnchorPane layoutX="54.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
                <children>
                   <VBox layoutX="18.0" layoutY="37.0" prefHeight="406.0" prefWidth="296.0">
                      <children>
@@ -91,7 +91,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="416.0" layoutY="52.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="432.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
+            <AnchorPane layoutX="416.0" layoutY="52.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
                <children>
                   <VBox layoutX="18.0" layoutY="37.0" prefHeight="240.0" prefWidth="296.0">
                      <children>
@@ -151,9 +151,14 @@
                               <Insets />
                            </opaqueInsets>
                         </HBox>
-                        <JFXButton fx:id="registrarmeBtn" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefHeight="25.0" prefWidth="261.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
+                        <JFXButton fx:id="registrarmeBtn" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefHeight="37.0" prefWidth="215.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
                            <VBox.margin>
                               <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
+                           </VBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="limpiarBtn" buttonType="RAISED" focusTraversable="false" onAction="#limpiarHandle" prefHeight="37.0" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Limpiar" textFill="#cdcdcd">
+                           <VBox.margin>
+                              <Insets bottom="25.0" left="50.0" right="50.0" />
                            </VBox.margin>
                         </JFXButton>
                      </children>
