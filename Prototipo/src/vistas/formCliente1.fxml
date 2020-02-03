@@ -91,7 +91,7 @@
                         </JFXTextField>
                         <HBox alignment="CENTER_LEFT" prefWidth="286.0" spacing="10.0">
                            <children>
-                              <JFXComboBox fx:id="estadoCivilCmb" focusColor="WHITE" prefHeight="37.0" prefWidth="287.0" promptText="Estado civil" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" unFocusColor="WHITE" />
+                              <JFXComboBox fx:id="estadoCivilCmb" focusColor="WHITE" labelFloat="true" prefHeight="37.0" prefWidth="287.0" promptText="Estado civil" styleClass="jfx-cmb" stylesheets="@../css/formCliente.css" unFocusColor="WHITE" />
                            </children>
                            <padding>
                               <Insets bottom="20.0" />

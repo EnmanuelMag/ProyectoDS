@@ -146,11 +146,6 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <JFXToggleButton fx:id="banoTb" disable="true" text="Si" textFill="WHITE" toggleColor="WHITE" toggleLineColor="#999999" GridPane.columnIndex="2" GridPane.rowIndex="4">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </JFXToggleButton>
                               <Label text="Pisos" textFill="WHITE" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="18.0" />
@@ -165,6 +160,7 @@
                               <JFXComboBox fx:id="gasfiteriaCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                               <JFXComboBox fx:id="iluminacionCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                               <JFXComboBox fx:id="techoCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                              <JFXComboBox fx:id="banioCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                            </children>
                         </GridPane>
                         <JFXButton fx:id="registrarmeButton" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefWidth="200.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="REGISTRAR" textFill="#cdcdcd">

@@ -54,7 +54,6 @@ public class DiseñoCasaController implements Initializable {
     private JFXToggleButton posicionTb;
     @FXML
     private Spinner<Double> superficieSp;
-    @FXML
     private JFXToggleButton banoTb;
     @FXML
     private RadioButton enPiso;
@@ -67,13 +66,13 @@ public class DiseñoCasaController implements Initializable {
     @FXML
     private RadioButton enBaño;
     @FXML
-    private JFXComboBox<?> pisosCombo;
+    private JFXComboBox<Adicionalpiso> pisosCombo;
     @FXML
-    private JFXComboBox<?> gasfiteriaCombo;
+    private JFXComboBox<Adicionalgriferia> gasfiteriaCombo;
     @FXML
-    private JFXComboBox<?> iluminacionCombo;
+    private JFXComboBox<Adicionaliluminacion> iluminacionCombo;
     @FXML
-    private JFXComboBox<?> techoCombo;
+    private JFXComboBox<Adicionaltecho> techoCombo;
     @FXML
     private JFXButton limpiarButton;
 
@@ -81,6 +80,15 @@ public class DiseñoCasaController implements Initializable {
     private SpinnerValueFactory<Integer> valueFactory4;
     private SpinnerValueFactory<String> valueFactory3;
     private SpinnerValueFactory<Double> valueFactory2 ;
+    
+    private Cliente cliente;
+    private Empleado empleado;
+    @FXML
+    private JFXComboBox<Adicionalbanios> banioCombo;
+    private Casacreada casaCreada;
+    private Cotizacion cotizacion;
+    private CasacreadaAdicional casaAdicional;
+    
     /**
      * Initializes the controller class.
      */
@@ -89,77 +97,134 @@ public class DiseñoCasaController implements Initializable {
         final int initialValue = 0;
  
         // Value factory.
-        valueFactory = //
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
-        valueFactory4 = //
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
+        valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
+       
+        valueFactory4 = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
         
         ObservableList<String> orientaciones = FXCollections.observableArrayList(//
                "SUR","NORTE","ESTE","OESTE");
-        valueFactory3 = //
-               new SpinnerValueFactory.ListSpinnerValueFactory<String>(orientaciones);
-        
+        valueFactory3 = new SpinnerValueFactory.ListSpinnerValueFactory<String>(orientaciones);
         valueFactory3.setValue("SUR");
- 
-        valueFactory2 = //
-                new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 10, initialValue);
+        valueFactory2 = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 10, initialValue);
  
         habitacionesSp.setValueFactory(valueFactory4);
-       
+        habitacionesSp.valueProperty().addListener(new ChangeListener<Integer>() {
+             @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                casaCreada.getCasabuilder().setNumHabitaciones(newValue);
+            }
+        });
+        
         baniosSp.setValueFactory(valueFactory);
+        baniosSp.valueProperty().addListener(new ChangeListener<Integer>() {
+             @Override
+            public void changed(ObservableValue<? extends Integer> observable, Integer oldValue, Integer newValue) {
+                casaCreada.getCasabuilder().setNumBanios(newValue);
+            }
+        });
         orientacionSp.setValueFactory(valueFactory3);
+        orientacionSp.valueProperty().addListener(new ChangeListener<String>() {
+             @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                casaCreada.getCasabuilder().setOrientacion(newValue);
+            }
+            
+        });
         superficieSp.setValueFactory(valueFactory2);
-        
-        
+        superficieSp.valueProperty().addListener(new ChangeListener<Double>() {
+             @Override
+            public void changed(ObservableValue<? extends Double> observable, Double oldValue, Double newValue) {
+                casaCreada.getCasabuilder().setMetrosCuadrados(newValue);
+            }
+            
+        });
         
         
         enBaño.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                banoTb.setDisable(!isNowSelected);
+                banioCombo.setDisable(!isNowSelected);
+                Adicionalbanios adicional=(!isNowSelected)?banioCombo.getValue():null;
+                casaAdicional.setAdicionalbanios(banioCombo.getValue());
+                
             }});
         enGasfiteria.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
                 gasfiteriaCombo.setDisable(!isNowSelected);
+                Adicionalgriferia adicional=(!isNowSelected)?gasfiteriaCombo.getValue():null;
+                casaAdicional.setAdicionalgriferia(gasfiteriaCombo.getValue());
             }});
         enIluminacion.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
                 iluminacionCombo.setDisable(!isNowSelected);
+                Adicionaliluminacion adicional=(!isNowSelected)?iluminacionCombo.getValue():null;
+                casaAdicional.setAdicionaliluminacion(iluminacionCombo.getValue());
             }});
         enPiso.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
                 pisosCombo.setDisable(!isNowSelected);
+                Adicionalpiso adicional=(!isNowSelected)?pisosCombo.getValue():null;
+                casaAdicional.setAdicionalpiso(adicional);
             }});
         enTecho.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
                 techoCombo.setDisable(!isNowSelected);
+                Adicionaltecho adicional=(!isNowSelected)?techoCombo.getValue():null;
+                casaAdicional.setAdicionaltecho(adicional);
             }});
         
         patioTb.selectedProperty().addListener(((observable, oldValue, newValue) -> {
             String texto=(newValue)?"Grande":"Pequeño";
+            String texto2=(newValue)?"1":"0";
             patioTb.setText(texto);
+            casaCreada.getCasabuilder().setPatio(texto2);
             }));
         posicionTb.selectedProperty().addListener(((observable, oldValue, newValue) -> {
             String texto=(newValue)?"Esquinera":"No Esquinera";
+            String texto2=(newValue)?"1":"0";
             posicionTb.setText(texto);
+            casaCreada.getCasabuilder().setEsquinera(texto2);
         }));
-        banoTb.selectedProperty().addListener(((observable, oldValue, newValue) -> {
-            String texto=(newValue)?"Si":"No";
-            banoTb.setText(texto);
-                
-}));    
-       
+        
         List<Casabuilder>lista = (List<Casabuilder>)DBUtil.getAll(Casabuilder.class);
         comboCasaBase.setItems(FXCollections.observableList(lista));
+        comboCasaBase.setValue(lista.get(0));
+        casaCreada.setCasabuilder(lista.get(0));
+        cargarComboAdicionales();
+        
+        casaAdicional=new CasacreadaAdicional();
+        casaAdicional.setCasacreada(casaCreada);
+        casaAdicional.setAdicionalId(1);
         
     }    
+    
+    private void cargarComboAdicionales(){
+        List<Casabuilder>pisos = (List<Casabuilder>)DBUtil.getAll(Adicionalpiso.class);
+        comboCasaBase.setItems(FXCollections.observableList(pisos));
+        comboCasaBase.setValue(pisos.get(0));
+        List<Casabuilder>gasfiteria = (List<Casabuilder>)DBUtil.getAll(Adicionalgriferia.class);
+        comboCasaBase.setItems(FXCollections.observableList(gasfiteria));
+        comboCasaBase.setValue(gasfiteria.get(0));
+        List<Casabuilder>iluminacion = (List<Casabuilder>)DBUtil.getAll(Adicionaliluminacion.class);
+        comboCasaBase.setItems(FXCollections.observableList(iluminacion));
+        comboCasaBase.setValue(iluminacion.get(0));
+        List<Casabuilder>techos = (List<Casabuilder>)DBUtil.getAll(Adicionaltecho.class);
+        comboCasaBase.setItems(FXCollections.observableList(techos));
+        comboCasaBase.setValue(techos.get(0));
+        
+        
+    }
 
     @FXML
     private void registrarmeHandle(ActionEvent event) {
+        
+        
+        
+        
     }
 
     @FXML
@@ -167,6 +232,8 @@ public class DiseñoCasaController implements Initializable {
         
         Casabuilder casa=comboCasaBase.getValue();
         if (casa!=null){
+            casaCreada.setCasabuilder(casa);
+            
             valueFactory4.setValue(casa.getNumHabitaciones());
             
             valueFactory.setValue(casa.getNumBanios());
@@ -183,12 +250,16 @@ public class DiseñoCasaController implements Initializable {
             }else{
                 patioTb.setSelected(false);
             }
-            
-            
-            
         }
-            
         
     }
+    
+    public void setCliente(Cliente cliente){
+        this.cliente=cliente;
+    }
+    public void setEmpleado(Empleado empleado){
+        this.empleado=empleado;
+    }
+   
     
 }

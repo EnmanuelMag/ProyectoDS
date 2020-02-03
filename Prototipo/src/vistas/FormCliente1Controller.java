@@ -160,7 +160,7 @@ public class FormCliente1Controller implements Initializable {
             cl.setContrasena(contrasenaLbl.getText());
             cl.setCorreo(correoLbl.getText());
             cl.setDireccion((Direccion)DBUtil.get(Direccion.class, 1));
-            
+            cl.setIdentificador("0000");
             cl.setEmpresa((Empresa)DBUtil.get(Empresa.class, 1));
             cl.setEstadocivil(estadoCivilCmb.getValue());
             cl.setNombres(nombreLbl1.getText());
@@ -187,8 +187,10 @@ public class FormCliente1Controller implements Initializable {
 
             stage.show();
             stackPaneRoot.getScene().getWindow().hide();
+        }else{
+            
+            System.err.println("Tiene campos no validos");
         }
-        System.err.println("Tiene campos no validos");
     }
 
 }

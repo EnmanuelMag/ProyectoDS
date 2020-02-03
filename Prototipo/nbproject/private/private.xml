@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/ClientePrincipalController.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/NewHibernateUtil.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/modelos/Cargo.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/modelos/Estadocivil.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/MyDB.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/css/formCliente.css</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/FormCliente1Controller.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/FormVendedorController.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/InicioSesionController.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/Prototipo.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/AdminPrincipalController.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/css/iniciosesion.css</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/modelos/Cliente.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/Conexion2.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/DBUtil.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/Conexion.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/DiseñoCasaController.java</file>
         </group>
     </open-files>

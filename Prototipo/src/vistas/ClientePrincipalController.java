@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modelos.Cliente;
 
 /**
  * FXML Controller class
@@ -35,7 +36,9 @@ public class ClientePrincipalController implements Initializable {
     private JFXButton nuevoDiseñoB;
     @FXML
     private JFXButton verMisDiseñosB;
-
+    private Cliente cliente;
+    @FXML
+    private Label clienteLbl;
     /**
      * Initializes the controller class.
      */
@@ -62,7 +65,13 @@ public class ClientePrincipalController implements Initializable {
     @FXML
     private void nuevoDiseñoBHandle(ActionEvent event) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
+        
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DiseñoCasa.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+            
+        DiseñoCasaController controlador=fxmlLoader.getController();
+        controlador.setCliente(cliente);
+        
         centroStack.getChildren().clear();
         subtitulo.setText("DISEÑO NUEVO");
         centroStack.getChildren().add(root);
@@ -71,10 +80,23 @@ public class ClientePrincipalController implements Initializable {
     @FXML
     private void verMisDiseñosBHandle(ActionEvent event) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource("clienteListaDiseños.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("clienteListaDiseños.fxml"));
+        Parent root = (Parent) fxmlLoader.load();
+            
+        ClienteListaDiseñosController controlador=fxmlLoader.getController();
+        controlador.setCliente(cliente);
+        
         centroStack.getChildren().clear();
         subtitulo.setText("MIS DISEÑOS");
         centroStack.getChildren().add(root);
+    }
+    
+    public void setCliente(Cliente cliente){
+        this.cliente=cliente;
+        
+    }
+    public void setInfoCliente(){
+        clienteLbl.setText(clienteLbl.getText()+" "+cliente.getUsuario());
     }
     
     
