@@ -14,13 +14,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
+import javafx.scene.input.MouseEvent;
 
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -54,21 +60,74 @@ public class FormCliente1Controller implements Initializable {
     @FXML
     private JFXComboBox<?> cargoLaboralCmb;
     @FXML
-    private Spinner<?> numeroHijosSp;
+    private Spinner<Integer> numeroHijosSp;
     @FXML
     private JFXButton registrarmeBtn;
-
+    @FXML
+    private Label xLbl;
+    @FXML
+    private JFXButton limpiarBtn;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        initializeNumeroHijosSp();
+
+    }
 
     @FXML
-    private void registrarmeHandle(ActionEvent event) {
+    private void registrarmeHandle(ActionEvent event) throws IOException {
+        //Logica de registro
+        Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
+
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        stackPaneRoot.getScene().getWindow().hide();
     }
-    
+
+    private void initializeNumeroHijosSp() {
+        SpinnerValueFactory<Integer> valueFactory
+                = //
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0);
+        numeroHijosSp.setValueFactory(valueFactory);
+        numeroHijosSp.setEditable(true);
+
+    }
+
+    @FXML
+    private void exitHandle(MouseEvent event) throws IOException {
+
+        Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
+
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+
+        stage.show();
+        stackPaneRoot.getScene().getWindow().hide();
+    }
+
+    @FXML
+    private void limpiarHandle(ActionEvent event) {
+        nombreLbl.setText("");
+        apellidoLbl.setText("");
+        telefLbl.setText("");
+        direccionLbl.setText("");
+        correoLbl.setText("");
+        cargoLbl.setText("");
+        telefonoLaboralLbl.setText("");
+        empresaLbl.setText("");
+        direccionLaboralLbl.setText("");
+        initializeNumeroHijosSp();
+    }
+
 }
