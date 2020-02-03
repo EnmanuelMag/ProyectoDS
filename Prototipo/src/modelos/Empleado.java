@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Empleado  implements java.io.Serializable {
 
 
-     private Integer empleadoId;
+     private int empleadoId;
      private Cargo cargo;
      private Direccion direccion;
      private Estadocivil estadocivil;
@@ -26,7 +26,8 @@ public class Empleado  implements java.io.Serializable {
     }
 
 	
-    public Empleado(Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo) {
+    public Empleado(int empleadoId, Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo) {
+        this.empleadoId = empleadoId;
         this.cargo = cargo;
         this.direccion = direccion;
         this.estadocivil = estadocivil;
@@ -36,7 +37,8 @@ public class Empleado  implements java.io.Serializable {
         this.correo = correo;
         this.activo = activo;
     }
-    public Empleado(Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, Set empleadocreacasas) {
+    public Empleado(int empleadoId, Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, Set empleadocreacasas) {
+       this.empleadoId = empleadoId;
        this.cargo = cargo;
        this.direccion = direccion;
        this.estadocivil = estadocivil;
@@ -48,11 +50,11 @@ public class Empleado  implements java.io.Serializable {
        this.empleadocreacasas = empleadocreacasas;
     }
    
-    public Integer getEmpleadoId() {
+    public int getEmpleadoId() {
         return this.empleadoId;
     }
     
-    public void setEmpleadoId(Integer empleadoId) {
+    public void setEmpleadoId(int empleadoId) {
         this.empleadoId = empleadoId;
     }
     public Cargo getCargo() {

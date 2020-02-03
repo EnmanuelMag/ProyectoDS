@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private Integer clienteId;
+     private int clienteId;
      private Cargo cargo;
      private Direccion direccion;
      private Empresa empresa;
@@ -30,7 +30,8 @@ public class Cliente  implements java.io.Serializable {
     }
 
 	
-    public Cliente(Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos) {
+    public Cliente(int clienteId, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos) {
+        this.clienteId = clienteId;
         this.direccion = direccion;
         this.estadocivil = estadocivil;
         this.nombres = nombres;
@@ -42,7 +43,8 @@ public class Cliente  implements java.io.Serializable {
         this.telefTrabajo = telefTrabajo;
         this.numHijos = numHijos;
     }
-    public Cliente(Cargo cargo, Direccion direccion, Empresa empresa, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, Set cotizacions) {
+    public Cliente(int clienteId, Cargo cargo, Direccion direccion, Empresa empresa, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, Set cotizacions) {
+       this.clienteId = clienteId;
        this.cargo = cargo;
        this.direccion = direccion;
        this.empresa = empresa;
@@ -58,11 +60,11 @@ public class Cliente  implements java.io.Serializable {
        this.cotizacions = cotizacions;
     }
    
-    public Integer getClienteId() {
+    public int getClienteId() {
         return this.clienteId;
     }
     
-    public void setClienteId(Integer clienteId) {
+    public void setClienteId(int clienteId) {
         this.clienteId = clienteId;
     }
     public Cargo getCargo() {

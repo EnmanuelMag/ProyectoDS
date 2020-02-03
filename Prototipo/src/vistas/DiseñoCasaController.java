@@ -41,7 +41,7 @@ public class DiseñoCasaController implements Initializable {
     @FXML
     private JFXButton registrarmeButton;
     @FXML
-    private JFXComboBox<?> comboCasaBase;
+    private JFXComboBox<Casabuilder> comboCasaBase;
     @FXML
     private Spinner<Integer> habitacionesSp;
     @FXML
@@ -77,39 +77,35 @@ public class DiseñoCasaController implements Initializable {
     @FXML
     private JFXButton limpiarButton;
 
+    private  SpinnerValueFactory<Integer> valueFactory ;
+    private SpinnerValueFactory<Integer> valueFactory4;
+    private SpinnerValueFactory<String> valueFactory3;
+    private SpinnerValueFactory<Double> valueFactory2 ;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        //habitacionesSp = new Spinner<Integer>();
-        //baniosSp = new Spinner<Integer>();
-        //orientacionSp = new Spinner<String>();
-        //superficieSp = new Spinner<Double>();
         final int initialValue = 0;
  
         // Value factory.
-        SpinnerValueFactory<Integer> valueFactory = //
+        valueFactory = //
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
-        
-        SpinnerValueFactory<Integer> valueFactory4 = //
+        valueFactory4 = //
                 new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
-        
         
         ObservableList<String> orientaciones = FXCollections.observableArrayList(//
                "SUR","NORTE","ESTE","OESTE");
-        
-        SpinnerValueFactory<String> valueFactory3 = //
+        valueFactory3 = //
                new SpinnerValueFactory.ListSpinnerValueFactory<String>(orientaciones);
         
         valueFactory3.setValue("SUR");
  
-        
-        SpinnerValueFactory<Double> valueFactory2 = //
+        valueFactory2 = //
                 new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 10, initialValue);
  
         habitacionesSp.setValueFactory(valueFactory4);
+       
         baniosSp.setValueFactory(valueFactory);
         orientacionSp.setValueFactory(valueFactory3);
         superficieSp.setValueFactory(valueFactory2);
@@ -155,14 +151,44 @@ public class DiseñoCasaController implements Initializable {
             String texto=(newValue)?"Si":"No";
             banoTb.setText(texto);
                 
-}));
-        
-       List<Canton> lista=DBUtil.getAll(Canton.class);
+}));    
+        List<Casabuilder> lista;
+        lista = (List<Casabuilder>)DBUtil.getAll(Casabuilder.class);
+        comboCasaBase.setItems(FXCollections.observableList(lista));
         
     }    
 
     @FXML
     private void registrarmeHandle(ActionEvent event) {
+    }
+
+    @FXML
+    private void comboCasaBaseManejador(ActionEvent event) {
+        
+        Casabuilder casa=comboCasaBase.getValue();
+        if (casa!=null){
+            valueFactory4.setValue(casa.getNumHabitaciones());
+            
+            valueFactory.setValue(casa.getNumBanios());
+            valueFactory3.setValue(casa.getOrientacion().toUpperCase());
+            
+            valueFactory2.setValue(casa.getMetrosCuadrados());
+            if (casa.getEsquinera().equals('1')){
+                posicionTb.setSelected(true);
+            }else{
+                posicionTb.setSelected(false);
+            }
+            if (casa.getPatio().equals('1')){
+                patioTb.setSelected(true);
+            }else{
+                patioTb.setSelected(false);
+            }
+            
+            
+            
+        }
+            
+        
     }
     
 }

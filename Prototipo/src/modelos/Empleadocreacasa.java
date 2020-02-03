@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Empleadocreacasa  implements java.io.Serializable {
 
 
-     private Integer empleadoCasaCreadaId;
+     private int empleadoCasaCreadaId;
      private Casacreada casacreada;
      private Empleado empleado;
      private Date fecha;
@@ -18,17 +18,18 @@ public class Empleadocreacasa  implements java.io.Serializable {
     public Empleadocreacasa() {
     }
 
-    public Empleadocreacasa(Casacreada casacreada, Empleado empleado, Date fecha) {
+    public Empleadocreacasa(int empleadoCasaCreadaId, Casacreada casacreada, Empleado empleado, Date fecha) {
+       this.empleadoCasaCreadaId = empleadoCasaCreadaId;
        this.casacreada = casacreada;
        this.empleado = empleado;
        this.fecha = fecha;
     }
    
-    public Integer getEmpleadoCasaCreadaId() {
+    public int getEmpleadoCasaCreadaId() {
         return this.empleadoCasaCreadaId;
     }
     
-    public void setEmpleadoCasaCreadaId(Integer empleadoCasaCreadaId) {
+    public void setEmpleadoCasaCreadaId(int empleadoCasaCreadaId) {
         this.empleadoCasaCreadaId = empleadoCasaCreadaId;
     }
     public Casacreada getCasacreada() {

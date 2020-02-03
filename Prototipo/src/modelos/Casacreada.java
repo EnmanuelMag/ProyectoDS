@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Casacreada  implements java.io.Serializable {
 
 
-     private Integer casaAdicionalId;
+     private int casaAdicionalId;
      private Casabuilder casabuilder;
      private Set empleadocreacasas = new HashSet(0);
      private Set casacreadaAdicionals = new HashSet(0);
@@ -21,21 +21,23 @@ public class Casacreada  implements java.io.Serializable {
     }
 
 	
-    public Casacreada(Casabuilder casabuilder) {
+    public Casacreada(int casaAdicionalId, Casabuilder casabuilder) {
+        this.casaAdicionalId = casaAdicionalId;
         this.casabuilder = casabuilder;
     }
-    public Casacreada(Casabuilder casabuilder, Set empleadocreacasas, Set casacreadaAdicionals, Set cotizacions) {
+    public Casacreada(int casaAdicionalId, Casabuilder casabuilder, Set empleadocreacasas, Set casacreadaAdicionals, Set cotizacions) {
+       this.casaAdicionalId = casaAdicionalId;
        this.casabuilder = casabuilder;
        this.empleadocreacasas = empleadocreacasas;
        this.casacreadaAdicionals = casacreadaAdicionals;
        this.cotizacions = cotizacions;
     }
    
-    public Integer getCasaAdicionalId() {
+    public int getCasaAdicionalId() {
         return this.casaAdicionalId;
     }
     
-    public void setCasaAdicionalId(Integer casaAdicionalId) {
+    public void setCasaAdicionalId(int casaAdicionalId) {
         this.casaAdicionalId = casaAdicionalId;
     }
     public Casabuilder getCasabuilder() {

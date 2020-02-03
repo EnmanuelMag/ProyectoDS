@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Cotizacion  implements java.io.Serializable {
 
 
-     private Integer cotizacionId;
+     private int cotizacionId;
      private Casacreada casacreada;
      private Cliente cliente;
      private Date fecha;
@@ -19,18 +19,19 @@ public class Cotizacion  implements java.io.Serializable {
     public Cotizacion() {
     }
 
-    public Cotizacion(Casacreada casacreada, Cliente cliente, Date fecha, double precio) {
+    public Cotizacion(int cotizacionId, Casacreada casacreada, Cliente cliente, Date fecha, double precio) {
+       this.cotizacionId = cotizacionId;
        this.casacreada = casacreada;
        this.cliente = cliente;
        this.fecha = fecha;
        this.precio = precio;
     }
    
-    public Integer getCotizacionId() {
+    public int getCotizacionId() {
         return this.cotizacionId;
     }
     
-    public void setCotizacionId(Integer cotizacionId) {
+    public void setCotizacionId(int cotizacionId) {
         this.cotizacionId = cotizacionId;
     }
     public Casacreada getCasacreada() {

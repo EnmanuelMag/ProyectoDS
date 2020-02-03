@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package modelos;
 public class CasacreadaAdicional  implements java.io.Serializable {
 
 
-     private Integer casaCreadaAdicional;
+     private int casaCreadaAdicional;
      private Adicionalbanios adicionalbanios;
      private Adicionalgriferia adicionalgriferia;
      private Adicionaliluminacion adicionaliluminacion;
@@ -22,11 +22,13 @@ public class CasacreadaAdicional  implements java.io.Serializable {
     }
 
 	
-    public CasacreadaAdicional(Casacreada casacreada, int adicionalId) {
+    public CasacreadaAdicional(int casaCreadaAdicional, Casacreada casacreada, int adicionalId) {
+        this.casaCreadaAdicional = casaCreadaAdicional;
         this.casacreada = casacreada;
         this.adicionalId = adicionalId;
     }
-    public CasacreadaAdicional(Adicionalbanios adicionalbanios, Adicionalgriferia adicionalgriferia, Adicionaliluminacion adicionaliluminacion, Adicionalpiso adicionalpiso, Adicionaltecho adicionaltecho, Casacreada casacreada, int adicionalId) {
+    public CasacreadaAdicional(int casaCreadaAdicional, Adicionalbanios adicionalbanios, Adicionalgriferia adicionalgriferia, Adicionaliluminacion adicionaliluminacion, Adicionalpiso adicionalpiso, Adicionaltecho adicionaltecho, Casacreada casacreada, int adicionalId) {
+       this.casaCreadaAdicional = casaCreadaAdicional;
        this.adicionalbanios = adicionalbanios;
        this.adicionalgriferia = adicionalgriferia;
        this.adicionaliluminacion = adicionaliluminacion;
@@ -36,11 +38,11 @@ public class CasacreadaAdicional  implements java.io.Serializable {
        this.adicionalId = adicionalId;
     }
    
-    public Integer getCasaCreadaAdicional() {
+    public int getCasaCreadaAdicional() {
         return this.casaCreadaAdicional;
     }
     
-    public void setCasaCreadaAdicional(Integer casaCreadaAdicional) {
+    public void setCasaCreadaAdicional(int casaCreadaAdicional) {
         this.casaCreadaAdicional = casaCreadaAdicional;
     }
     public Adicionalbanios getAdicionalbanios() {

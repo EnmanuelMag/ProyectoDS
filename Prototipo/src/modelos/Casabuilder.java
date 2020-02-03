@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,6 +20,7 @@ public class Casabuilder  implements java.io.Serializable {
      private int numHabitaciones;
      private int numBanios;
      private double precio;
+     private String nombre;
      private Set casacreadas = new HashSet(0);
 
     public Casabuilder() {
@@ -36,7 +37,7 @@ public class Casabuilder  implements java.io.Serializable {
         this.numBanios = numBanios;
         this.precio = precio;
     }
-    public Casabuilder(double metrosCuadrados, int numPlantas, String esquinera, String orientacion, String patio, int numHabitaciones, int numBanios, double precio, Set casacreadas) {
+    public Casabuilder(double metrosCuadrados, int numPlantas, String esquinera, String orientacion, String patio, int numHabitaciones, int numBanios, double precio, String nombre, Set casacreadas) {
        this.metrosCuadrados = metrosCuadrados;
        this.numPlantas = numPlantas;
        this.esquinera = esquinera;
@@ -45,6 +46,7 @@ public class Casabuilder  implements java.io.Serializable {
        this.numHabitaciones = numHabitaciones;
        this.numBanios = numBanios;
        this.precio = precio;
+       this.nombre = nombre;
        this.casacreadas = casacreadas;
     }
    
@@ -111,6 +113,13 @@ public class Casabuilder  implements java.io.Serializable {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+    public String getNombre() {
+        return this.nombre;
+    }
+    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     public Set getCasacreadas() {
         return this.casacreadas;
     }
@@ -119,7 +128,12 @@ public class Casabuilder  implements java.io.Serializable {
         this.casacreadas = casacreadas;
     }
 
+    @Override
+    public String toString() {
+        return  nombre;
+    }
 
+    
 
 
 }

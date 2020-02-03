@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 09:19:53 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="modelos.Casabuilder" table="casabuilder" catalog="prototipo" optimistic-lock="version">
         <id name="casaBaseId" type="java.lang.Integer">
@@ -31,6 +31,9 @@
         </property>
         <property name="precio" type="double">
             <column name="precio" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" />
         </property>
         <set name="casacreadas" table="casacreada" inverse="true" lazy="true" fetch="select">
             <key>

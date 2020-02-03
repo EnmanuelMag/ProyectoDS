@@ -108,6 +108,8 @@ CREATE TABLE IF NOT EXISTS `Prototipo`.`Empleado` (
   `direccionId` INT NOT NULL,
   `activo` VARCHAR(1) NOT NULL,
   `Cargo_cargoId` INT NOT NULL,
+  `usuario` VARCHAR(45) NULL,
+  `contrasena` VARCHAR(45) NULL,
   PRIMARY KEY (`empleadoId`),
   INDEX `fk_Persona_EstadoCivil_idx` (`estadoCivilId` ASC) VISIBLE,
   INDEX `fk_Persona_Direccion1_idx` (`direccionId` ASC) VISIBLE,
@@ -158,6 +160,8 @@ CREATE TABLE IF NOT EXISTS `Prototipo`.`Cliente` (
   `telefTrabajo` VARCHAR(45) NOT NULL,
   `numHijos` INT NOT NULL,
   `empresaId` INT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `contrasena` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`clienteId`),
   INDEX `fk_Persona_EstadoCivil_idx` (`estadoCivilId` ASC) VISIBLE,
   INDEX `fk_Persona_Direccion1_idx` (`direccionId` ASC) VISIBLE,
@@ -405,4 +409,3 @@ INSERT INTO `AdicionalPiso` VALUES (1,'valdoza',150),(2,'marmol',300);
 INSERT INTO `AdicionalTecho` VALUES (1,'cielo razo',150),(2,'teja',10);
 
 INSERT INTO `CasaBuilder` VALUES (1,200,1,'0','norte','0',2,1,20000,'Oasis'),(2,400,2,'0','norte','0',3,2,45000,'Paraiso'),(3,600,3,'0','norte','0',4,3,65000,'Cielo');
-
