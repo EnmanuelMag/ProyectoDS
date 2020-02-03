@@ -21,13 +21,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.StackPane;
-import conexion.Conexion2;
 import conexion.DBUtil;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+
 import modelos.*;
 /**
  * FXML Controller class
@@ -64,7 +60,7 @@ public class DiseñoCasaController implements Initializable {
     @FXML
     private RadioButton enTecho;
     @FXML
-    private RadioButton enBaño;
+    private RadioButton enBano;
     @FXML
     private JFXComboBox<Adicionalpiso> pisosCombo;
     @FXML
@@ -91,6 +87,8 @@ public class DiseñoCasaController implements Initializable {
     
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -103,7 +101,10 @@ public class DiseñoCasaController implements Initializable {
         
         ObservableList<String> orientaciones = FXCollections.observableArrayList(//
                "SUR","NORTE","ESTE","OESTE");
-        valueFactory3 = new SpinnerValueFactory.ListSpinnerValueFactory<String>(orientaciones);
+
+        valueFactory3 = //
+               new SpinnerValueFactory.ListSpinnerValueFactory<>(orientaciones);
+        
         valueFactory3.setValue("SUR");
         valueFactory2 = new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 10, initialValue);
  
@@ -131,6 +132,7 @@ public class DiseñoCasaController implements Initializable {
             
         });
         superficieSp.setValueFactory(valueFactory2);
+        
         superficieSp.valueProperty().addListener(new ChangeListener<Double>() {
              @Override
             public void changed(ObservableValue<? extends Double> observable, Double oldValue, Double newValue) {
@@ -138,44 +140,33 @@ public class DiseñoCasaController implements Initializable {
             }
             
         });
-        
-        
-        enBaño.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                banioCombo.setDisable(!isNowSelected);
+      
+
+        enBano.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            banioCombo.setDisable(!isNowSelected);
                 Adicionalbanios adicional=(!isNowSelected)?banioCombo.getValue():null;
                 casaAdicional.setAdicionalbanios(banioCombo.getValue());
-                
-            }});
-        enGasfiteria.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                gasfiteriaCombo.setDisable(!isNowSelected);
+        });
+        enGasfiteria.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            gasfiteriaCombo.setDisable(!isNowSelected);
                 Adicionalgriferia adicional=(!isNowSelected)?gasfiteriaCombo.getValue():null;
                 casaAdicional.setAdicionalgriferia(gasfiteriaCombo.getValue());
-            }});
-        enIluminacion.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                iluminacionCombo.setDisable(!isNowSelected);
+        });
+        enIluminacion.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            iluminacionCombo.setDisable(!isNowSelected);
                 Adicionaliluminacion adicional=(!isNowSelected)?iluminacionCombo.getValue():null;
                 casaAdicional.setAdicionaliluminacion(iluminacionCombo.getValue());
-            }});
-        enPiso.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                pisosCombo.setDisable(!isNowSelected);
+        });
+        enPiso.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            pisosCombo.setDisable(!isNowSelected);
                 Adicionalpiso adicional=(!isNowSelected)?pisosCombo.getValue():null;
                 casaAdicional.setAdicionalpiso(adicional);
-            }});
-        enTecho.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                techoCombo.setDisable(!isNowSelected);
+        });
+        enTecho.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            techoCombo.setDisable(!isNowSelected);
                 Adicionaltecho adicional=(!isNowSelected)?techoCombo.getValue():null;
                 casaAdicional.setAdicionaltecho(adicional);
-            }});
+        });
         
         patioTb.selectedProperty().addListener(((observable, oldValue, newValue) -> {
             String texto=(newValue)?"Grande":"Pequeño";
@@ -240,6 +231,7 @@ public class DiseñoCasaController implements Initializable {
             valueFactory3.setValue(casa.getOrientacion().toUpperCase());
             
             valueFactory2.setValue(casa.getMetrosCuadrados());
+            
             if (casa.getEsquinera().equals('1')){
                 posicionTb.setSelected(true);
             }else{
@@ -250,8 +242,7 @@ public class DiseñoCasaController implements Initializable {
             }else{
                 patioTb.setSelected(false);
             }
-        }
-        
+    }
     }
     
     public void setCliente(Cliente cliente){

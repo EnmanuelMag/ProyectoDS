@@ -51,13 +51,17 @@ public class InicioSesionController implements Initializable {
     @FXML
     private JFXPasswordField contrasenaTfd;
 
+    private JFXButton disenoRapidoB;
+
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        stackPaneRoot.setOnKeyPressed((u)->{
+        stackPaneRoot.setOnKeyPressed(u->{
             if (u.getCode().equals(KeyCode.ESCAPE)){
                 System.exit(0);
             }
@@ -73,12 +77,18 @@ public class InicioSesionController implements Initializable {
         
         Parent newRoot = FXMLLoader.load(getClass().getResource("clientePrincipal.fxml"));
        
-        if (textFieldUsuario.getText().equals("V")) {
-            newRoot = FXMLLoader.load(getClass().getResource("vendedorPrincipal.fxml"));
-        } else if (textFieldUsuario.getText().equals("A")) {
-            newRoot = FXMLLoader.load(getClass().getResource("AdminPrincipal.fxml"));
-        }else if(textFieldUsuario.getText().equals("C")) {
-            newRoot = FXMLLoader.load(getClass().getResource("clientePrincipal.fxml"));
+        switch (textFieldUsuario.getText()) {
+            case "V":
+                newRoot = FXMLLoader.load(getClass().getResource("vendedorPrincipal.fxml"));
+                break;
+            case "A":
+                newRoot = FXMLLoader.load(getClass().getResource("AdminPrincipal.fxml"));
+                break;
+            case "C":
+                newRoot = FXMLLoader.load(getClass().getResource("clientePrincipal.fxml"));
+                break;
+            default:
+                break;
         }
 
         Stage stage = new Stage();
@@ -148,7 +158,7 @@ public class InicioSesionController implements Initializable {
     }
 
     @FXML
-    private void abrirDiseñoRapido(ActionEvent event) throws IOException {
+    private void abrirDisenoRapido(ActionEvent event) throws IOException {
         
          
         Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
