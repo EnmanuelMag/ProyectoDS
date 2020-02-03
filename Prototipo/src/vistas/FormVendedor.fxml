@@ -37,8 +37,18 @@
          <center>
             <HBox alignment="CENTER" spacing="25.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox alignment="CENTER" maxHeight="400.0" prefWidth="300.0" spacing="20.0" styleClass="colorSubAnchorPane" stylesheets="@../css/base.css">
+                  <VBox alignment="CENTER" maxHeight="400.0" prefWidth="300.0" spacing="10.0" styleClass="colorSubAnchorPane" stylesheets="@../css/base.css">
                      <children>
+                        <JFXTextField fx:id="usuarioLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="20.0" layoutY="49.0" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXTextField fx:id="contrasenaLbl2" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="20.0" layoutY="21.0" prefHeight="25.0" prefWidth="261.0" promptText="Constraseña" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXTextField>
                         <JFXTextField fx:id="nombreLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Nombre" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
                            <font>
                               <Font size="16.0" />

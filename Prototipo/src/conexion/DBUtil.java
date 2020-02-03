@@ -15,11 +15,9 @@ import org.hibernate.Transaction;
  *
  * @author Josue
  */
-public class DBUtil {
-    
-    public static boolean agregar(Object o){
+public class DBUtil {    public static boolean agregar(Object o){
         
-        SessionFactory factory = NewHibernateUtil.getSessionFactory();
+        SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
         Transaction tx = sesion.beginTransaction();
         sesion.save(o);
@@ -31,7 +29,7 @@ public class DBUtil {
     }
     public static boolean agregarOActualizar(Object o){
         
-        SessionFactory factory = NewHibernateUtil.getSessionFactory();
+        SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
         Transaction tx = sesion.beginTransaction();
         sesion.saveOrUpdate(o);
@@ -44,7 +42,7 @@ public class DBUtil {
     
     public static boolean borrar(Object o){
         
-        SessionFactory factory = NewHibernateUtil.getSessionFactory();
+        SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
         Transaction tx = sesion.beginTransaction();
         sesion.delete(o);
@@ -55,7 +53,7 @@ public class DBUtil {
     
     public static boolean update(Object o){
         
-        SessionFactory factory = NewHibernateUtil.getSessionFactory();
+        SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
         Transaction tx = sesion.beginTransaction();
         sesion.update(o);
@@ -67,7 +65,7 @@ public class DBUtil {
     
     public static Object get(Class clase,int key){
         
-        SessionFactory factory = NewHibernateUtil.getSessionFactory();
+        SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
         Transaction tx = sesion.beginTransaction();
         
@@ -80,7 +78,7 @@ public class DBUtil {
     
     public static List getAll(Class clase){
         
-        SessionFactory factory = NewHibernateUtil.getSessionFactory();
+        SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
         Transaction tx = sesion.beginTransaction();
         
@@ -90,5 +88,5 @@ public class DBUtil {
         sesion.close();
         
         return lista;
- }   
+    }
 }

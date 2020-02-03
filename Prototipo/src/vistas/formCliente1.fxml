@@ -31,14 +31,30 @@
             </Label>
             <AnchorPane layoutX="54.0" layoutY="52.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="496.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
                <children>
-                  <VBox layoutX="18.0" layoutY="37.0" prefHeight="406.0" prefWidth="296.0">
+                  <VBox layoutX="18.0" layoutY="13.0" prefHeight="406.0" prefWidth="296.0" spacing="12.0">
                      <children>
-                        <JFXTextField fx:id="nombreLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Nombre" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                        <JFXTextField fx:id="usuarioLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
                            <font>
                               <Font size="16.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" />
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="contrasenaLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Contraseña" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="nombreLbl1" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="15.0" layoutY="10.0" prefHeight="25.0" prefWidth="261.0" promptText="Nombre" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </JFXTextField>
                         <JFXTextField fx:id="apellidoLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Apellido" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
@@ -46,7 +62,7 @@
                               <Font size="16.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </JFXTextField>
                         <JFXTextField fx:id="telefLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Teléfono" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
@@ -54,7 +70,7 @@
                               <Font size="16.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </JFXTextField>
                         <JFXTextField fx:id="correoLbl" labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Correo electrónico" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
@@ -62,7 +78,7 @@
                               <Font size="14.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </JFXTextField>
                         <JFXTextField fx:id="direccionLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Dirección domiciliar" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
@@ -70,7 +86,7 @@
                               <Font size="16.0" />
                            </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" />
+                              <Insets bottom="10.0" />
                            </VBox.margin>
                         </JFXTextField>
                         <HBox alignment="CENTER_LEFT" prefWidth="286.0" spacing="10.0">
@@ -82,9 +98,6 @@
                            </padding>
                         </HBox>
                      </children>
-                     <padding>
-                        <Insets bottom="5.0" left="5.0" right="5.0" />
-                     </padding>
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
@@ -103,7 +116,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField fx:id="direccionLaboralLbl" labelFloat="true" promptText="Dirección laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                        <JFXTextField fx:id="direccionLaboralLbl" focusColor="WHITE" labelFloat="true" promptText="Dirección laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -111,15 +124,7 @@
                               <Insets bottom="20.0" />
                            </VBox.margin>
                         </JFXTextField>
-                        <JFXTextField fx:id="cargoLbl" focusColor="WHITE" focusTraversable="false" labelFloat="true" prefHeight="25.0" prefWidth="261.0" promptText="Cargo" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="20.0" />
-                           </VBox.margin>
-                        </JFXTextField>
-                        <JFXTextField fx:id="telefonoLaboralLbl" labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Teléfono laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
+                        <JFXTextField fx:id="telefonoLaboralLbl" focusColor="WHITE" labelFloat="true" prefHeight="30.0" prefWidth="446.0" promptText="Teléfono laboral" styleClass="txtField" stylesheets="@../css/iniciosesion.css">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -151,7 +156,7 @@
                               <Insets />
                            </opaqueInsets>
                         </HBox>
-                        <JFXButton fx:id="registrarmeBtn" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeHandle" prefHeight="37.0" prefWidth="215.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
+                        <JFXButton fx:id="registrarmeBtn" buttonType="RAISED" focusTraversable="false" onAction="#registrarmeManejador" prefHeight="37.0" prefWidth="215.0" ripplerFill="#362424" styleClass="btnSecundario" stylesheets="@../css/iniciosesion.css" text="Registrame" textFill="#cdcdcd">
                            <VBox.margin>
                               <Insets bottom="25.0" left="50.0" right="50.0" top="25.0" />
                            </VBox.margin>

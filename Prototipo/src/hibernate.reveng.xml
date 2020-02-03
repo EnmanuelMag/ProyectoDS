@@ -41,23 +41,23 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="prototipo"/>
-  <table-filter match-name="cliente"/>
-  <table-filter match-name="empleado"/>
-  <table-filter match-name="adicionalpiso"/>
   <table-filter match-name="adicionaltecho"/>
-  <table-filter match-name="provincia"/>
-  <table-filter match-name="casabuilder"/>
-  <table-filter match-name="casacreada_adicional"/>
-  <table-filter match-name="cotizacion"/>
+  <table-filter match-name="estadocivil"/>
+  <table-filter match-name="empleadocreacasa"/>
+  <table-filter match-name="canton"/>
+  <table-filter match-name="empleado"/>
   <table-filter match-name="cargo"/>
+  <table-filter match-name="empresa"/>
+  <table-filter match-name="adicionalpiso"/>
+  <table-filter match-name="adicionalbanios"/>
   <table-filter match-name="casacreada"/>
   <table-filter match-name="adicionaliluminacion"/>
-  <table-filter match-name="adicionalbanios"/>
+  <table-filter match-name="provincia"/>
+  <table-filter match-name="casacreada_adicional"/>
+  <table-filter match-name="casabuilder"/>
+  <table-filter match-name="cotizacion"/>
   <table-filter match-name="direccion"/>
-  <table-filter match-name="empresa"/>
-  <table-filter match-name="estadocivil"/>
-  <table-filter match-name="canton"/>
-  <table-filter match-name="pais"/>
-  <table-filter match-name="empleadocreacasa"/>
   <table-filter match-name="adicionalgriferia"/>
+  <table-filter match-name="pais"/>
+  <table-filter match-name="cliente"/>
 </hibernate-reverse-engineering>

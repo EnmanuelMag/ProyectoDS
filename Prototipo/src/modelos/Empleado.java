@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 10:33:02 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -20,6 +20,8 @@ public class Empleado  implements java.io.Serializable {
      private String telefono;
      private String correo;
      private String activo;
+     private String usuario;
+     private String contrasena;
      private Set empleadocreacasas = new HashSet(0);
 
     public Empleado() {
@@ -37,7 +39,7 @@ public class Empleado  implements java.io.Serializable {
         this.correo = correo;
         this.activo = activo;
     }
-    public Empleado(int empleadoId, Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, Set empleadocreacasas) {
+    public Empleado(int empleadoId, Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String usuario, String contrasena, Set empleadocreacasas) {
        this.empleadoId = empleadoId;
        this.cargo = cargo;
        this.direccion = direccion;
@@ -47,6 +49,8 @@ public class Empleado  implements java.io.Serializable {
        this.telefono = telefono;
        this.correo = correo;
        this.activo = activo;
+       this.usuario = usuario;
+       this.contrasena = contrasena;
        this.empleadocreacasas = empleadocreacasas;
     }
    
@@ -112,6 +116,20 @@ public class Empleado  implements java.io.Serializable {
     
     public void setActivo(String activo) {
         this.activo = activo;
+    }
+    public String getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getContrasena() {
+        return this.contrasena;
+    }
+    
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
     public Set getEmpleadocreacasas() {
         return this.empleadocreacasas;

@@ -5,10 +5,11 @@
         <group>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/ClientePrincipalController.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/NewHibernateUtil.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/hibernate.reveng.xml</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/FormCliente1Controller.java</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/FormVendedorController.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/InicioSesionController.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/Prototipo.java</file>
-            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/AdminPrincipalController.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/DBUtil.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/conexion/Conexion.java</file>
             <file>file:/C:/Users/Josue/Documents/Proyecto%20Final%20DS/ProyectoDS/ProyectoDS/Prototipo/src/vistas/DiseñoCasaController.java</file>

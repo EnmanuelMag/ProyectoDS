@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 10:33:02 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -130,7 +130,7 @@ public class Casabuilder  implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return  nombre;
+        return nombre ;
     }
 
     

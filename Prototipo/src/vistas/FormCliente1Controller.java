@@ -8,10 +8,14 @@ package vistas;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import conexion.Conexion2;
+import conexion.DBUtil;
 import java.io.IOException;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,6 +31,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import modelos.Cargo;
+import modelos.Cliente;
+import modelos.Direccion;
+import modelos.Empresa;
+import modelos.Estadocivil;
+import org.hibernate.Session;
 
 /**
  * FXML Controller class
@@ -37,7 +47,6 @@ public class FormCliente1Controller implements Initializable {
 
     @FXML
     private StackPane stackPaneRoot;
-    @FXML
     private JFXTextField nombreLbl;
     @FXML
     private JFXTextField apellidoLbl;
@@ -48,17 +57,16 @@ public class FormCliente1Controller implements Initializable {
     @FXML
     private JFXTextField direccionLbl;
     @FXML
-    private JFXComboBox<?> estadoCivilCmb;
+    private JFXComboBox<Estadocivil> estadoCivilCmb;
     @FXML
     private JFXTextField empresaLbl;
     @FXML
     private JFXTextField direccionLaboralLbl;
-    @FXML
     private JFXTextField cargoLbl;
     @FXML
     private JFXTextField telefonoLaboralLbl;
     @FXML
-    private JFXComboBox<?> cargoLaboralCmb;
+    private JFXComboBox<Cargo> cargoLaboralCmb;
     @FXML
     private Spinner<Integer> numeroHijosSp;
     @FXML
@@ -67,35 +75,35 @@ public class FormCliente1Controller implements Initializable {
     private Label xLbl;
     @FXML
     private JFXButton limpiarBtn;
-
+    @FXML
+    private JFXTextField usuarioLbl;
+    @FXML
+    private JFXTextField contrasenaLbl;
+    @FXML
+    private JFXTextField nombreLbl1;
+    private SpinnerValueFactory<Integer> valueFactory;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         initializeNumeroHijosSp();
-
+        initializeComboBxs();
+        
     }
-
-    @FXML
-    private void registrarmeHandle(ActionEvent event) throws IOException {
-        //Logica de registro
-        Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
-
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.UNDECORATED);
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-
-        stage.show();
-        stackPaneRoot.getScene().getWindow().hide();
+    private void initializeComboBxs() {
+        List<Estadocivil> estadosCivill=(List<Estadocivil>)DBUtil.getAll( Estadocivil.class);
+        estadoCivilCmb.setItems(FXCollections.observableList(estadosCivill));
+        estadoCivilCmb.setValue(estadosCivill.get(0));
+        
+        List<Cargo> cargosl=(List<Cargo>)DBUtil.getAll(Cargo.class);
+        cargoLaboralCmb.setItems(FXCollections.observableList(cargosl));
+        cargoLaboralCmb.setValue(cargosl.get(0));
+        
     }
 
     private void initializeNumeroHijosSp() {
-        SpinnerValueFactory<Integer> valueFactory
-                = //
-                new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0);
+        valueFactory =new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100, 0);
         numeroHijosSp.setValueFactory(valueFactory);
         numeroHijosSp.setEditable(true);
 
@@ -127,7 +135,60 @@ public class FormCliente1Controller implements Initializable {
         telefonoLaboralLbl.setText("");
         empresaLbl.setText("");
         direccionLaboralLbl.setText("");
+        usuarioLbl.setText("");
+        contrasenaLbl.setText("");
+        valueFactory.setValue(0);
         initializeNumeroHijosSp();
+    }
+
+    @FXML
+    private void registrarmeManejador(ActionEvent event) throws IOException {
+        
+         boolean validador=true;
+        
+        List<Cliente> clientes= (List<Cliente>)DBUtil.getAll(Cliente.class);
+        for (Cliente c:clientes){
+            if (c.getUsuario().equals(usuarioLbl.getText())){
+                validador=false;
+            }
+        }
+        Cliente cl=new Cliente();
+        if (validador){
+            cl.setActivo("1");
+            cl.setApellidos(apellidoLbl.getText());
+            cl.setCargo(cargoLaboralCmb.getValue());
+            cl.setContrasena(contrasenaLbl.getText());
+            cl.setCorreo(correoLbl.getText());
+            cl.setDireccion((Direccion)DBUtil.get(Direccion.class, 1));
+            
+            cl.setEmpresa((Empresa)DBUtil.get(Empresa.class, 1));
+            cl.setEstadocivil(estadoCivilCmb.getValue());
+            cl.setNombres(nombreLbl1.getText());
+            cl.setNumHijos(valueFactory.getValue());
+            cl.setTelefTrabajo(telefonoLaboralLbl.getText());
+            cl.setTelefono(telefLbl.getText());
+            cl.setUsuario(usuarioLbl.getText());
+        }
+        if (cl.getContrasena().length()==0 || cl.getUsuario().length()==0){
+            validador=false;
+        }
+        
+        if (validador){
+            DBUtil.agregar(cl);
+            System.out.println("Usuario escrito");
+            
+            Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
+
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+
+            stage.show();
+            stackPaneRoot.getScene().getWindow().hide();
+        }
+        System.err.println("Tiene campos no validos");
     }
 
 }

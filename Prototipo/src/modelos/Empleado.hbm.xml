@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2/02/2020 09:19:53 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 10:33:03 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="modelos.Empleado" table="empleado" catalog="prototipo" optimistic-lock="version">
         <id name="empleadoId" type="int">
@@ -31,6 +31,12 @@
         </property>
         <property name="activo" type="string">
             <column name="activo" length="1" not-null="true" />
+        </property>
+        <property name="usuario" type="string">
+            <column name="usuario" length="45" />
+        </property>
+        <property name="contrasena" type="string">
+            <column name="contrasena" length="45" />
         </property>
         <set name="empleadocreacasas" table="empleadocreacasa" inverse="true" lazy="true" fetch="select">
             <key>

@@ -61,6 +61,10 @@ public class FormVendedorController implements Initializable {
     private JFXButton limpiarBtn;
     @FXML
     private Label xLbl;
+    @FXML
+    private JFXTextField usuarioLbl;
+    @FXML
+    private JFXTextField contrasenaLbl2;
 
     /**
      * Initializes the controller class.

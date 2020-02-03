@@ -1,5 +1,5 @@
 package modelos;
-// Generated 2/02/2020 09:19:52 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 10:33:02 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -24,13 +24,15 @@ public class Cliente  implements java.io.Serializable {
      private String identificador;
      private String telefTrabajo;
      private int numHijos;
+     private String usuario;
+     private String contrasena;
      private Set cotizacions = new HashSet(0);
 
     public Cliente() {
     }
 
 	
-    public Cliente(int clienteId, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos) {
+    public Cliente(int clienteId, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, String usuario, String contrasena) {
         this.clienteId = clienteId;
         this.direccion = direccion;
         this.estadocivil = estadocivil;
@@ -42,8 +44,10 @@ public class Cliente  implements java.io.Serializable {
         this.identificador = identificador;
         this.telefTrabajo = telefTrabajo;
         this.numHijos = numHijos;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
     }
-    public Cliente(int clienteId, Cargo cargo, Direccion direccion, Empresa empresa, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, Set cotizacions) {
+    public Cliente(int clienteId, Cargo cargo, Direccion direccion, Empresa empresa, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, String usuario, String contrasena, Set cotizacions) {
        this.clienteId = clienteId;
        this.cargo = cargo;
        this.direccion = direccion;
@@ -57,6 +61,8 @@ public class Cliente  implements java.io.Serializable {
        this.identificador = identificador;
        this.telefTrabajo = telefTrabajo;
        this.numHijos = numHijos;
+       this.usuario = usuario;
+       this.contrasena = contrasena;
        this.cotizacions = cotizacions;
     }
    
@@ -150,6 +156,20 @@ public class Cliente  implements java.io.Serializable {
     
     public void setNumHijos(int numHijos) {
         this.numHijos = numHijos;
+    }
+    public String getUsuario() {
+        return this.usuario;
+    }
+    
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    public String getContrasena() {
+        return this.contrasena;
+    }
+    
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
     public Set getCotizacions() {
         return this.cotizacions;

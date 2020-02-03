@@ -21,7 +21,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.StackPane;
-import conexion.Conexion;
+import conexion.Conexion2;
 import conexion.DBUtil;
 import java.util.List;
 import org.hibernate.Query;
@@ -152,8 +152,8 @@ public class DiseñoCasaController implements Initializable {
             banoTb.setText(texto);
                 
 }));    
-        List<Casabuilder> lista;
-        lista = (List<Casabuilder>)DBUtil.getAll(Casabuilder.class);
+       
+        List<Casabuilder>lista = (List<Casabuilder>)DBUtil.getAll(Casabuilder.class);
         comboCasaBase.setItems(FXCollections.observableList(lista));
         
     }    

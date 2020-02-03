@@ -14,13 +14,13 @@ import org.hibernate.SessionFactory;
  *
  * @author Msi
  */
-public  class Conexion {
+public  class Conexion2 {
     
     private static Session conexion = null;
     
     private static Session Conexion(){
         
-        SessionFactory sesion = NewHibernateUtil.getSessionFactory();
+        SessionFactory sesion = MyDB.getInstance();
         return sesion.openSession();  
     }
     
@@ -29,11 +29,6 @@ public  class Conexion {
         return conexion == null ? conexion = Conexion() : conexion;
     }
     
-    public void close(){
-        
-        if(conexion != null && conexion.isOpen()) conexion.close();
-                
-    }
     
     public boolean isConnected(){
         

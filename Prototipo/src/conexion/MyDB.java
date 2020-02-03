@@ -14,7 +14,7 @@ import org.hibernate.SessionFactory;
  *
  * @author Msi
  */
-public class NewHibernateUtil {
+public class MyDB {
 
     private static final SessionFactory sessionFactory;
     
@@ -30,7 +30,7 @@ public class NewHibernateUtil {
         }
     }
     
-    public static SessionFactory getSessionFactory() {
+    public static SessionFactory getInstance() {
         return sessionFactory;
     }
 }
