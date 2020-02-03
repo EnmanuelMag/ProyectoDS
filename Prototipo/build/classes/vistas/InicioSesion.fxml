@@ -16,11 +16,11 @@
          <children>
             <AnchorPane layoutX="428.0" layoutY="39.0" prefHeight="442.0" prefWidth="331.0" styleClass="colorSubAnchorPane" stylesheets="@../css/iniciosesion.css">
                <children>
-                  <JFXTextField fx:id="textFieldUsuario" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="34.0" layoutY="144.0" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
+                  <JFXTextField fx:id="usuarioTfd" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="34.0" layoutY="144.0" prefHeight="25.0" prefWidth="261.0" promptText="Usuario" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="#dbe4dc">
                      <font>
                         <Font size="16.0" />
                      </font></JFXTextField>
-                  <JFXPasswordField focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="36.0" layoutY="234.0" prefHeight="25.0" prefWidth="261.0" promptText="Contraseña" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="WHITE">
+                  <JFXPasswordField fx:id="contrasenaTfd" focusColor="WHITE" focusTraversable="false" labelFloat="true" layoutX="36.0" layoutY="234.0" prefHeight="25.0" prefWidth="261.0" promptText="Contraseña" styleClass="txtField" stylesheets="@../css/iniciosesion.css" unFocusColor="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font></JFXPasswordField>
