@@ -54,7 +54,10 @@ public class Adicionalpiso  implements java.io.Serializable {
         this.casacreadaAdicionals = casacreadaAdicionals;
     }
 
-
+@Override
+    public String toString() {
+        return descripcion;
+    }
 
 
 }

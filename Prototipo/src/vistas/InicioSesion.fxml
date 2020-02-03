@@ -45,7 +45,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <JFXButton fx:id="diseñoRapidoB" buttonType="RAISED" focusTraversable="false" layoutX="80.0" layoutY="187.0" onAction="#abrirDiseñoRapido" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Diseño rápido" textFill="#cdcdcd" />
+            <JFXButton fx:id="diseñoRapidoB" buttonType="RAISED" focusTraversable="false" layoutX="80.0" layoutY="187.0" onAction="#abrirDisenoRapido" prefHeight="25.0" prefWidth="261.0" styleClass="btnPrincipal" stylesheets="@../css/iniciosesion.css" text="Diseño rápido" textFill="#cdcdcd" />
          </children>
       </AnchorPane>
    </children>

@@ -55,7 +55,10 @@ public class Adicionalgriferia  implements java.io.Serializable {
     }
 
 
-
+@Override
+    public String toString() {
+        return descripcion;
+    }
 
 }
 

@@ -54,6 +54,11 @@ public class Adicionaltecho  implements java.io.Serializable {
         this.casacreadaAdicionals = casacreadaAdicionals;
     }
 
+    @Override
+    public String toString() {
+        return descripcion;
+    }
+    
 
 
 

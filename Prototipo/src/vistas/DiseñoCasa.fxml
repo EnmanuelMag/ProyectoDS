@@ -141,7 +141,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label text="Baño inodorizado" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <Label text="Baños" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -155,7 +155,7 @@
                               <RadioButton fx:id="enGasfiteria" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" GridPane.rowIndex="1" />
                               <RadioButton fx:id="enIluminacion" layoutX="10.0" layoutY="56.0" mnemonicParsing="false" GridPane.rowIndex="2" />
                               <RadioButton fx:id="enTecho" mnemonicParsing="false" GridPane.rowIndex="3" />
-                              <RadioButton fx:id="enBaño" mnemonicParsing="false" GridPane.rowIndex="4" />
+                              <RadioButton fx:id="enBano" mnemonicParsing="false" GridPane.rowIndex="4" />
                               <JFXComboBox fx:id="pisosCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" />
                               <JFXComboBox fx:id="gasfiteriaCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                               <JFXComboBox fx:id="iluminacionCombo" disable="true" focusColor="WHITE" prefWidth="150.0" unFocusColor="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />

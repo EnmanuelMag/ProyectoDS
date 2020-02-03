@@ -93,7 +93,7 @@ public class DiseñoCasaController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         final int initialValue = 0;
- 
+        casaCreada=new Casacreada();
         // Value factory.
         valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 10, initialValue);
        
@@ -141,7 +141,6 @@ public class DiseñoCasaController implements Initializable {
             
         });
       
-
         enBano.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
             banioCombo.setDisable(!isNowSelected);
                 Adicionalbanios adicional=(!isNowSelected)?banioCombo.getValue():null;
@@ -182,10 +181,16 @@ public class DiseñoCasaController implements Initializable {
         }));
         
         List<Casabuilder>lista = (List<Casabuilder>)DBUtil.getAll(Casabuilder.class);
+        /*for (Casabuilder cb:lista){
+            if (cb.getNombre().equals("Cielo")||cb.getNombre().equals("Oasis")||cb.getNombre().equals("Paraiso")){
+                comboCasaBase.getItems().add(cb);
+            }
+        }*/
+        cargarComboAdicionales();
+        casaCreada.setCasabuilder(lista.get(0));
         comboCasaBase.setItems(FXCollections.observableList(lista));
         comboCasaBase.setValue(lista.get(0));
-        casaCreada.setCasabuilder(lista.get(0));
-        cargarComboAdicionales();
+        
         
         casaAdicional=new CasacreadaAdicional();
         casaAdicional.setCasacreada(casaCreada);
@@ -194,18 +199,21 @@ public class DiseñoCasaController implements Initializable {
     }    
     
     private void cargarComboAdicionales(){
-        List<Casabuilder>pisos = (List<Casabuilder>)DBUtil.getAll(Adicionalpiso.class);
-        comboCasaBase.setItems(FXCollections.observableList(pisos));
-        comboCasaBase.setValue(pisos.get(0));
-        List<Casabuilder>gasfiteria = (List<Casabuilder>)DBUtil.getAll(Adicionalgriferia.class);
-        comboCasaBase.setItems(FXCollections.observableList(gasfiteria));
-        comboCasaBase.setValue(gasfiteria.get(0));
-        List<Casabuilder>iluminacion = (List<Casabuilder>)DBUtil.getAll(Adicionaliluminacion.class);
-        comboCasaBase.setItems(FXCollections.observableList(iluminacion));
-        comboCasaBase.setValue(iluminacion.get(0));
-        List<Casabuilder>techos = (List<Casabuilder>)DBUtil.getAll(Adicionaltecho.class);
-        comboCasaBase.setItems(FXCollections.observableList(techos));
-        comboCasaBase.setValue(techos.get(0));
+        List<Adicionalpiso>pisos = (List<Adicionalpiso>)DBUtil.getAll(Adicionalpiso.class);
+        pisosCombo.setItems(FXCollections.observableList(pisos));
+        pisosCombo.setValue(pisos.get(0));
+        List<Adicionalgriferia>gasfiteria = (List<Adicionalgriferia>)DBUtil.getAll(Adicionalgriferia.class);
+        gasfiteriaCombo.setItems(FXCollections.observableList(gasfiteria));
+        gasfiteriaCombo.setValue(gasfiteria.get(0));
+        List<Adicionaliluminacion>iluminacion = (List<Adicionaliluminacion>)DBUtil.getAll(Adicionaliluminacion.class);
+        iluminacionCombo.setItems(FXCollections.observableList(iluminacion));
+        iluminacionCombo.setValue(iluminacion.get(0));
+        List<Adicionaltecho>techos = (List<Adicionaltecho>)DBUtil.getAll(Adicionaltecho.class);
+        techoCombo.setItems(FXCollections.observableList(techos));
+        techoCombo.setValue(techos.get(0));
+        List<Adicionalbanios>banios = (List<Adicionalbanios>)DBUtil.getAll(Adicionalbanios.class);
+        banioCombo.setItems(FXCollections.observableList(banios));
+        banioCombo.setValue(banios.get(0));
         
         
     }
@@ -213,8 +221,9 @@ public class DiseñoCasaController implements Initializable {
     @FXML
     private void registrarmeHandle(ActionEvent event) {
         
-        
-        
+        DBUtil.update(casaCreada.getCasabuilder());
+        DBUtil.agregar(casaAdicional);
+        DBUtil.agregar(casaCreada);
         
     }
 

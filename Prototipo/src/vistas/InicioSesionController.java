@@ -71,7 +71,7 @@ public class InicioSesionController implements Initializable {
     }    
 
 
-
+/*
     @FXML
     private void iniciarSesion(ActionEvent event) throws IOException {
         
@@ -102,7 +102,7 @@ public class InicioSesionController implements Initializable {
         stackPaneRoot.getScene().getWindow().hide();
         
     }
-
+*/
     @FXML
     private void registrarseHandle(ActionEvent event) throws IOException {
         //formCliente1
@@ -121,7 +121,7 @@ public class InicioSesionController implements Initializable {
     }
 
     @FXML
-    private void iniciarSesion(KeyEvent event) throws IOException {
+    private void iniciarSesion(ActionEvent event) throws IOException {
         
         Cliente cliente=null;
         
@@ -173,6 +173,7 @@ public class InicioSesionController implements Initializable {
         stackPaneRoot.getScene().getWindow().hide();
         
     }
+
 
     
     

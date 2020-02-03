@@ -54,7 +54,10 @@ public class Adicionalbanios  implements java.io.Serializable {
         this.casacreadaAdicionals = casacreadaAdicionals;
     }
 
-
+@Override
+    public String toString() {
+        return descripcion;
+    }
 
 
 }
