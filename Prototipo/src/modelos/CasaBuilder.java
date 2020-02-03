@@ -119,7 +119,12 @@ public class CasaBuilder  implements java.io.Serializable {
         this.casaCreadas = casaCreadas;
     }
 
+    @Override
+    public String toString() {
+        return String.valueOf(casaBaseId);
+    }
 
+    
 
 
 }

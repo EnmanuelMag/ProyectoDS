@@ -14,17 +14,17 @@ import org.hibernate.SessionFactory;
  *
  * @author Msi
  */
-public class Conexion {
+public  class Conexion {
     
-    private Session conexion = null;
+    private static Session conexion = null;
     
-    private Session Conexion(){
+    private static Session Conexion(){
         
         SessionFactory sesion = NewHibernateUtil.getSessionFactory();
         return sesion.openSession();  
     }
     
-    public Session getInstance(){
+    public static Session getInstance(){
         
         return conexion == null ? conexion = Conexion() : conexion;
     }
