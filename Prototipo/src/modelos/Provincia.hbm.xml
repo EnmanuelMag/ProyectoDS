@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.Provincia" table="Provincia" catalog="Prototipo" optimistic-lock="version">
+    <class name="modelos.Provincia" table="provincia" catalog="prototipo" optimistic-lock="version">
         <id name="provinciaId" type="java.lang.Integer">
             <column name="provinciaId" />
             <generator class="identity" />
@@ -14,7 +14,7 @@
         <property name="descripcion" type="string">
             <column name="descripcion" length="100" not-null="true" />
         </property>
-        <set name="cantons" table="Canton" inverse="true" lazy="true" fetch="select">
+        <set name="cantons" table="canton" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="provinciaId" not-null="true" />
             </key>

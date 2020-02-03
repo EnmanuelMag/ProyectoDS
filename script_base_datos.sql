@@ -199,6 +199,7 @@ CREATE TABLE IF NOT EXISTS `Prototipo`.`CasaBuilder` (
   `numHabitaciones` INT NOT NULL,
   `numBanios` INT NOT NULL,
   `precio` DOUBLE NOT NULL,
+  `nombre` VARCHAR(100) NULL,
   PRIMARY KEY (`casaBaseId`))
 ENGINE = InnoDB;
 
@@ -378,3 +379,30 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `EstadoCivil` VALUES (5,'SOLTERO/A'),(6,'DIVORCIADO/A'),(7,'VIUDO/A'),(8,'CASADO/A');
+
+INSERT INTO `Pais` VALUES (1,'Karmaland');
+
+INSERT INTO `Provincia` VALUES (1,'Principal',1);
+
+INSERT INTO `Canton` VALUES (1,'Caton1',1);
+
+INSERT INTO `Direccion` VALUES (1,'Mi Dirr1',1);
+
+INSERT INTO `Cargo` VALUES (1,'EMPLEADO'),(2,'ADMINISTRADOR'),(3,'VENDEDOR');
+
+INSERT INTO `Empresa` VALUES (1,'1234','Rubius Copr'),(2,'5678','Pyhonix'),(3,'9876','Valve'),(4,'6543','Activision'),(5,'2584','Bandain Namco');
+
+INSERT INTO `AdicionalBanios` VALUES (1,'japones',120),(2,'normal',50);
+
+INSERT INTO `AdicionalGriferia` VALUES (1,'normal',60),(2,'inoxidable',95);
+
+INSERT INTO `AdicionalIluminacion` VALUES (1,'normal',25),(2,'led',35);
+
+INSERT INTO `AdicionalPiso` VALUES (1,'valdoza',150),(2,'marmol',300);
+
+INSERT INTO `AdicionalTecho` VALUES (1,'cielo razo',150),(2,'teja',10);
+
+INSERT INTO `CasaBuilder` VALUES (1,200,1,'0','norte','0',2,1,20000,'Oasis'),(2,400,2,'0','norte','0',3,2,45000,'Paraiso'),(3,600,3,'0','norte','0',4,3,65000,'Cielo');
+

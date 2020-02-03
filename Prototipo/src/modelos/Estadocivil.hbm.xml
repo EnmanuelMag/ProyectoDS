@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.EstadoCivil" table="EstadoCivil" catalog="Prototipo" optimistic-lock="version">
+    <class name="modelos.Estadocivil" table="estadocivil" catalog="prototipo" optimistic-lock="version">
         <id name="estadoCivilId" type="java.lang.Integer">
             <column name="estadoCivilId" />
             <generator class="identity" />
@@ -11,13 +11,13 @@
         <property name="descripcion" type="string">
             <column name="descripcion" length="45" not-null="true" />
         </property>
-        <set name="empleados" table="Empleado" inverse="true" lazy="true" fetch="select">
+        <set name="empleados" table="empleado" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="estadoCivilId" not-null="true" />
             </key>
             <one-to-many class="modelos.Empleado" />
         </set>
-        <set name="clientes" table="Cliente" inverse="true" lazy="true" fetch="select">
+        <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="estadoCivilId" not-null="true" />
             </key>

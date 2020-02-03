@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.Cliente" table="Cliente" catalog="Prototipo" optimistic-lock="version">
-        <id name="clienteId" type="int">
+    <class name="modelos.Cliente" table="cliente" catalog="prototipo" optimistic-lock="version">
+        <id name="clienteId" type="java.lang.Integer">
             <column name="clienteId" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="cargo" class="modelos.Cargo" fetch="select">
             <column name="cargoId" />
@@ -17,7 +17,7 @@
         <many-to-one name="empresa" class="modelos.Empresa" fetch="select">
             <column name="empresaId" />
         </many-to-one>
-        <many-to-one name="estadoCivil" class="modelos.EstadoCivil" fetch="select">
+        <many-to-one name="estadocivil" class="modelos.Estadocivil" fetch="select">
             <column name="estadoCivilId" not-null="true" />
         </many-to-one>
         <property name="nombres" type="string">
@@ -44,7 +44,7 @@
         <property name="numHijos" type="int">
             <column name="numHijos" not-null="true" />
         </property>
-        <set name="cotizacions" table="Cotizacion" inverse="true" lazy="true" fetch="select">
+        <set name="cotizacions" table="cotizacion" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="clienteId" not-null="true" />
             </key>

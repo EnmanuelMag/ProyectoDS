@@ -22,6 +22,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.StackPane;
 import conexion.Conexion;
+import conexion.DBUtil;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -156,16 +157,7 @@ public class DiseñoCasaController implements Initializable {
                 
 }));
         
-        SessionFactory factory = Conexion.getInstance().getSessionFactory();
-        Session sesion = factory.openSession();
-        /*Transaction tx = sesion.beginTransaction();
-        
-        Query query=sesion.createQuery("select t from "+ new CasaBuilder().getClass().getSimpleName()+ " t ");
-        List lista=query.list();
-        tx.commit();*/
-        sesion.close();
-        
-        //comboCasaBase.setItems(FXCollections.observableArrayList(lista));
+       List<Canton> lista=DBUtil.getAll(Canton.class);
         
     }    
 

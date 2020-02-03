@@ -1,5 +1,5 @@
 package modelos;
-// Generated 1/02/2020 07:18:57 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,50 +11,48 @@ import java.util.Set;
 public class Empleado  implements java.io.Serializable {
 
 
-     private int empleadoId;
+     private Integer empleadoId;
      private Cargo cargo;
      private Direccion direccion;
-     private EstadoCivil estadoCivil;
+     private Estadocivil estadocivil;
      private String nombres;
      private String apellidos;
      private String telefono;
      private String correo;
      private String activo;
-     private Set empleadoCreaCasas = new HashSet(0);
+     private Set empleadocreacasas = new HashSet(0);
 
     public Empleado() {
     }
 
 	
-    public Empleado(int empleadoId, Cargo cargo, Direccion direccion, EstadoCivil estadoCivil, String nombres, String apellidos, String telefono, String correo, String activo) {
-        this.empleadoId = empleadoId;
+    public Empleado(Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo) {
         this.cargo = cargo;
         this.direccion = direccion;
-        this.estadoCivil = estadoCivil;
+        this.estadocivil = estadocivil;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.telefono = telefono;
         this.correo = correo;
         this.activo = activo;
     }
-    public Empleado(int empleadoId, Cargo cargo, Direccion direccion, EstadoCivil estadoCivil, String nombres, String apellidos, String telefono, String correo, String activo, Set empleadoCreaCasas) {
-       this.empleadoId = empleadoId;
+    public Empleado(Cargo cargo, Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, Set empleadocreacasas) {
        this.cargo = cargo;
        this.direccion = direccion;
-       this.estadoCivil = estadoCivil;
+       this.estadocivil = estadocivil;
        this.nombres = nombres;
        this.apellidos = apellidos;
        this.telefono = telefono;
        this.correo = correo;
        this.activo = activo;
-       this.empleadoCreaCasas = empleadoCreaCasas;
+       this.empleadocreacasas = empleadocreacasas;
     }
    
-    public int getEmpleadoId() {
+    public Integer getEmpleadoId() {
         return this.empleadoId;
     }
     
-    public void setEmpleadoId(int empleadoId) {
+    public void setEmpleadoId(Integer empleadoId) {
         this.empleadoId = empleadoId;
     }
     public Cargo getCargo() {
@@ -71,12 +69,12 @@ public class Empleado  implements java.io.Serializable {
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
-    public EstadoCivil getEstadoCivil() {
-        return this.estadoCivil;
+    public Estadocivil getEstadocivil() {
+        return this.estadocivil;
     }
     
-    public void setEstadoCivil(EstadoCivil estadoCivil) {
-        this.estadoCivil = estadoCivil;
+    public void setEstadocivil(Estadocivil estadocivil) {
+        this.estadocivil = estadocivil;
     }
     public String getNombres() {
         return this.nombres;
@@ -113,12 +111,12 @@ public class Empleado  implements java.io.Serializable {
     public void setActivo(String activo) {
         this.activo = activo;
     }
-    public Set getEmpleadoCreaCasas() {
-        return this.empleadoCreaCasas;
+    public Set getEmpleadocreacasas() {
+        return this.empleadocreacasas;
     }
     
-    public void setEmpleadoCreaCasas(Set empleadoCreaCasas) {
-        this.empleadoCreaCasas = empleadoCreaCasas;
+    public void setEmpleadocreacasas(Set empleadocreacasas) {
+        this.empleadocreacasas = empleadocreacasas;
     }
 
 

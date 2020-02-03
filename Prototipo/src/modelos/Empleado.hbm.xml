@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.Empleado" table="Empleado" catalog="Prototipo" optimistic-lock="version">
-        <id name="empleadoId" type="int">
+    <class name="modelos.Empleado" table="empleado" catalog="prototipo" optimistic-lock="version">
+        <id name="empleadoId" type="java.lang.Integer">
             <column name="empleadoId" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="cargo" class="modelos.Cargo" fetch="select">
             <column name="Cargo_cargoId" not-null="true" />
@@ -14,7 +14,7 @@
         <many-to-one name="direccion" class="modelos.Direccion" fetch="select">
             <column name="direccionId" not-null="true" />
         </many-to-one>
-        <many-to-one name="estadoCivil" class="modelos.EstadoCivil" fetch="select">
+        <many-to-one name="estadocivil" class="modelos.Estadocivil" fetch="select">
             <column name="estadoCivilId" not-null="true" />
         </many-to-one>
         <property name="nombres" type="string">
@@ -32,11 +32,11 @@
         <property name="activo" type="string">
             <column name="activo" length="1" not-null="true" />
         </property>
-        <set name="empleadoCreaCasas" table="EmpleadoCreaCasa" inverse="true" lazy="true" fetch="select">
+        <set name="empleadocreacasas" table="empleadocreacasa" inverse="true" lazy="true" fetch="select">
             <key>
                 <column name="empleadoId" not-null="true" />
             </key>
-            <one-to-many class="modelos.EmpleadoCreaCasa" />
+            <one-to-many class="modelos.Empleadocreacasa" />
         </set>
     </class>
 </hibernate-mapping>

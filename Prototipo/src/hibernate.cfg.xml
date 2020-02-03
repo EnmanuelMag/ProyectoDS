@@ -43,23 +43,23 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://186.70.249.254:3308/Prototipo?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/prototipo?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password">1962</property>
+    <property name="hibernate.connection.password">root</property>
     <mapping resource="modelos/Pais.hbm.xml"/>
-    <mapping resource="modelos/CasaBuilder.hbm.xml"/>
+    <mapping resource="modelos/Casabuilder.hbm.xml"/>
     <mapping resource="modelos/Cliente.hbm.xml"/>
-    <mapping resource="modelos/AdicionalIluminacion.hbm.xml"/>
-    <mapping resource="modelos/AdicionalTecho.hbm.xml"/>
+    <mapping resource="modelos/Adicionaliluminacion.hbm.xml"/>
+    <mapping resource="modelos/Adicionaltecho.hbm.xml"/>
     <mapping resource="modelos/Empresa.hbm.xml"/>
-    <mapping resource="modelos/AdicionalBanios.hbm.xml"/>
-    <mapping resource="modelos/AdicionalGriferia.hbm.xml"/>
+    <mapping resource="modelos/Adicionalbanios.hbm.xml"/>
+    <mapping resource="modelos/Adicionalgriferia.hbm.xml"/>
     <mapping resource="modelos/Cotizacion.hbm.xml"/>
-    <mapping resource="modelos/EmpleadoCreaCasa.hbm.xml"/>
-    <mapping resource="modelos/CasaCreadaAdicional.hbm.xml"/>
-    <mapping resource="modelos/EstadoCivil.hbm.xml"/>
-    <mapping resource="modelos/AdicionalPiso.hbm.xml"/>
-    <mapping resource="modelos/CasaCreada.hbm.xml"/>
+    <mapping resource="modelos/Empleadocreacasa.hbm.xml"/>
+    <mapping resource="modelos/CasacreadaAdicional.hbm.xml"/>
+    <mapping resource="modelos/Estadocivil.hbm.xml"/>
+    <mapping resource="modelos/Adicionalpiso.hbm.xml"/>
+    <mapping resource="modelos/Casacreada.hbm.xml"/>
     <mapping resource="modelos/Direccion.hbm.xml"/>
     <mapping resource="modelos/Canton.hbm.xml"/>
     <mapping resource="modelos/Provincia.hbm.xml"/>

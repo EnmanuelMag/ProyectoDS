@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.CasaCreadaAdicional" table="CasaCreada_Adicional" catalog="Prototipo" optimistic-lock="version">
-        <id name="casaCreadaAdicional" type="int">
+    <class name="modelos.CasacreadaAdicional" table="casacreada_adicional" catalog="prototipo" optimistic-lock="version">
+        <id name="casaCreadaAdicional" type="java.lang.Integer">
             <column name="CasaCreada_Adicional" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="adicionalBanios" class="modelos.AdicionalBanios" fetch="select">
+        <many-to-one name="adicionalbanios" class="modelos.Adicionalbanios" fetch="select">
             <column name="adicionalBaniosId" />
         </many-to-one>
-        <many-to-one name="adicionalGriferia" class="modelos.AdicionalGriferia" fetch="select">
+        <many-to-one name="adicionalgriferia" class="modelos.Adicionalgriferia" fetch="select">
             <column name="adicionalGriferiaId" />
         </many-to-one>
-        <many-to-one name="adicionalIluminacion" class="modelos.AdicionalIluminacion" fetch="select">
+        <many-to-one name="adicionaliluminacion" class="modelos.Adicionaliluminacion" fetch="select">
             <column name="adicionalIluminacionId" />
         </many-to-one>
-        <many-to-one name="adicionalPiso" class="modelos.AdicionalPiso" fetch="select">
+        <many-to-one name="adicionalpiso" class="modelos.Adicionalpiso" fetch="select">
             <column name="adicionalPisoId" />
         </many-to-one>
-        <many-to-one name="adicionalTecho" class="modelos.AdicionalTecho" fetch="select">
+        <many-to-one name="adicionaltecho" class="modelos.Adicionaltecho" fetch="select">
             <column name="adicionalTechoId" />
         </many-to-one>
-        <many-to-one name="casaCreada" class="modelos.CasaCreada" fetch="select">
+        <many-to-one name="casacreada" class="modelos.Casacreada" fetch="select">
             <column name="casaCreadaId" not-null="true" />
         </many-to-one>
         <property name="adicionalId" type="int">

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="modelos.Casacreada" table="casacreada" catalog="prototipo" optimistic-lock="version">
+        <id name="casaAdicionalId" type="java.lang.Integer">
+            <column name="casaAdicionalId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="casabuilder" class="modelos.Casabuilder" fetch="select">
+            <column name="Casa_casaId" not-null="true" />
+        </many-to-one>
+        <set name="empleadocreacasas" table="empleadocreacasa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="casaCreada" not-null="true" />
+            </key>
+            <one-to-many class="modelos.Empleadocreacasa" />
+        </set>
+        <set name="casacreadaAdicionals" table="casacreada_adicional" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="casaCreadaId" not-null="true" />
+            </key>
+            <one-to-many class="modelos.CasacreadaAdicional" />
+        </set>
+        <set name="cotizacions" table="cotizacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="casaCreadaId" not-null="true" />
+            </key>
+            <one-to-many class="modelos.Cotizacion" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 1/02/2020 07:18:58 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="modelos.AdicionalGriferia" table="AdicionalGriferia" catalog="Prototipo" optimistic-lock="version">
-        <id name="adicionalGriferiaId" type="java.lang.Integer">
-            <column name="adicionalGriferiaId" />
+    <class name="modelos.Adicionaltecho" table="adicionaltecho" catalog="prototipo" optimistic-lock="version">
+        <id name="adicionalTechoId" type="java.lang.Integer">
+            <column name="adicionalTechoId" />
             <generator class="identity" />
         </id>
         <property name="descripcion" type="string">
@@ -14,11 +14,11 @@
         <property name="precio" type="java.lang.Double">
             <column name="precio" precision="22" scale="0" />
         </property>
-        <set name="casaCreadaAdicionals" table="CasaCreada_Adicional" inverse="true" lazy="true" fetch="select">
+        <set name="casacreadaAdicionals" table="casacreada_adicional" inverse="true" lazy="true" fetch="select">
             <key>
-                <column name="adicionalGriferiaId" />
+                <column name="adicionalTechoId" />
             </key>
-            <one-to-many class="modelos.CasaCreadaAdicional" />
+            <one-to-many class="modelos.CasacreadaAdicional" />
         </set>
     </class>
 </hibernate-mapping>

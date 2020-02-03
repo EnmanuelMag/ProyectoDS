@@ -1,5 +1,5 @@
 package modelos;
-// Generated 1/02/2020 07:18:57 PM by Hibernate Tools 4.3.1
+// Generated 2/02/2020 08:19:21 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,11 +11,11 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private int clienteId;
+     private Integer clienteId;
      private Cargo cargo;
      private Direccion direccion;
      private Empresa empresa;
-     private EstadoCivil estadoCivil;
+     private Estadocivil estadocivil;
      private String nombres;
      private String apellidos;
      private String telefono;
@@ -30,10 +30,9 @@ public class Cliente  implements java.io.Serializable {
     }
 
 	
-    public Cliente(int clienteId, Direccion direccion, EstadoCivil estadoCivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos) {
-        this.clienteId = clienteId;
+    public Cliente(Direccion direccion, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos) {
         this.direccion = direccion;
-        this.estadoCivil = estadoCivil;
+        this.estadocivil = estadocivil;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.telefono = telefono;
@@ -43,12 +42,11 @@ public class Cliente  implements java.io.Serializable {
         this.telefTrabajo = telefTrabajo;
         this.numHijos = numHijos;
     }
-    public Cliente(int clienteId, Cargo cargo, Direccion direccion, Empresa empresa, EstadoCivil estadoCivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, Set cotizacions) {
-       this.clienteId = clienteId;
+    public Cliente(Cargo cargo, Direccion direccion, Empresa empresa, Estadocivil estadocivil, String nombres, String apellidos, String telefono, String correo, String activo, String identificador, String telefTrabajo, int numHijos, Set cotizacions) {
        this.cargo = cargo;
        this.direccion = direccion;
        this.empresa = empresa;
-       this.estadoCivil = estadoCivil;
+       this.estadocivil = estadocivil;
        this.nombres = nombres;
        this.apellidos = apellidos;
        this.telefono = telefono;
@@ -60,11 +58,11 @@ public class Cliente  implements java.io.Serializable {
        this.cotizacions = cotizacions;
     }
    
-    public int getClienteId() {
+    public Integer getClienteId() {
         return this.clienteId;
     }
     
-    public void setClienteId(int clienteId) {
+    public void setClienteId(Integer clienteId) {
         this.clienteId = clienteId;
     }
     public Cargo getCargo() {
@@ -88,12 +86,12 @@ public class Cliente  implements java.io.Serializable {
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
-    public EstadoCivil getEstadoCivil() {
-        return this.estadoCivil;
+    public Estadocivil getEstadocivil() {
+        return this.estadocivil;
     }
     
-    public void setEstadoCivil(EstadoCivil estadoCivil) {
-        this.estadoCivil = estadoCivil;
+    public void setEstadocivil(Estadocivil estadocivil) {
+        this.estadocivil = estadocivil;
     }
     public String getNombres() {
         return this.nombres;
