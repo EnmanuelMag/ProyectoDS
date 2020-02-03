@@ -25,30 +25,6 @@ public class Casabuilder  implements java.io.Serializable {
 
     public Casabuilder() {
     }
-
-	
-    public Casabuilder(double metrosCuadrados, int numPlantas, String esquinera, String orientacion, String patio, int numHabitaciones, int numBanios, double precio) {
-        this.metrosCuadrados = metrosCuadrados;
-        this.numPlantas = numPlantas;
-        this.esquinera = esquinera;
-        this.orientacion = orientacion;
-        this.patio = patio;
-        this.numHabitaciones = numHabitaciones;
-        this.numBanios = numBanios;
-        this.precio = precio;
-    }
-    public Casabuilder(double metrosCuadrados, int numPlantas, String esquinera, String orientacion, String patio, int numHabitaciones, int numBanios, double precio, String nombre, Set casacreadas) {
-       this.metrosCuadrados = metrosCuadrados;
-       this.numPlantas = numPlantas;
-       this.esquinera = esquinera;
-       this.orientacion = orientacion;
-       this.patio = patio;
-       this.numHabitaciones = numHabitaciones;
-       this.numBanios = numBanios;
-       this.precio = precio;
-       this.nombre = nombre;
-       this.casacreadas = casacreadas;
-    }
    
     public Integer getCasaBaseId() {
         return this.casaBaseId;

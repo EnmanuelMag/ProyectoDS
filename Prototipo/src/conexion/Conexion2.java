@@ -14,11 +14,11 @@ import org.hibernate.SessionFactory;
  *
  * @author Msi
  */
-public  class Conexion2 {
+public class Conexion2 {
     
     private static Session conexion = null;
     
-    private static Session Conexion(){
+    private static Session conexion(){
         
         SessionFactory sesion = MyDB.getInstance();
         return sesion.openSession();  
@@ -26,7 +26,7 @@ public  class Conexion2 {
     
     public static Session getInstance(){
         
-        return conexion == null ? conexion = Conexion() : conexion;
+        return conexion == null ? conexion = conexion() : conexion;
     }
     
     

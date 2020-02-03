@@ -15,7 +15,13 @@ import org.hibernate.Transaction;
  *
  * @author Josue
  */
-public class DBUtil {    public static boolean agregar(Object o){
+public class DBUtil {    
+    
+    private  DBUtil(){
+        
+    }
+    
+    public static boolean agregar(Object o){
         
         SessionFactory factory = MyDB.getInstance();
         Session sesion = factory.openSession();
@@ -27,6 +33,7 @@ public class DBUtil {    public static boolean agregar(Object o){
         return true;
         
     }
+
     public static boolean agregarOActualizar(Object o){
         
         SessionFactory factory = MyDB.getInstance();

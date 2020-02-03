@@ -32,16 +32,18 @@ public class ClientePrincipalController implements Initializable {
     @FXML
     private StackPane centroStack;
     @FXML
-    private JFXButton nuevoDiseñoB;
+    private JFXButton nuevoDisenoB;
     @FXML
-    private JFXButton verMisDiseñosB;
+    private JFXButton verMisDisenosB;
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
 
 
@@ -60,7 +62,7 @@ public class ClientePrincipalController implements Initializable {
     }
 
     @FXML
-    private void nuevoDiseñoBHandle(ActionEvent event) throws IOException {
+    private void nuevoDisenoBHandle(ActionEvent event) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("DiseñoCasa.fxml"));
         centroStack.getChildren().clear();
@@ -69,7 +71,7 @@ public class ClientePrincipalController implements Initializable {
     }
 
     @FXML
-    private void verMisDiseñosBHandle(ActionEvent event) throws IOException {
+    private void verMisDisenosBHandle(ActionEvent event) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("clienteListaDiseños.fxml"));
         centroStack.getChildren().clear();

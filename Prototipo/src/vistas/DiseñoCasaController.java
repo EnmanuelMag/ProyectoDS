@@ -21,13 +21,9 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.layout.StackPane;
-import conexion.Conexion2;
 import conexion.DBUtil;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
+
 import modelos.*;
 /**
  * FXML Controller class
@@ -65,7 +61,7 @@ public class DiseñoCasaController implements Initializable {
     @FXML
     private RadioButton enTecho;
     @FXML
-    private RadioButton enBaño;
+    private RadioButton enBano;
     @FXML
     private JFXComboBox<?> pisosCombo;
     @FXML
@@ -83,6 +79,8 @@ public class DiseñoCasaController implements Initializable {
     private SpinnerValueFactory<Double> valueFactory2 ;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -97,7 +95,7 @@ public class DiseñoCasaController implements Initializable {
         ObservableList<String> orientaciones = FXCollections.observableArrayList(//
                "SUR","NORTE","ESTE","OESTE");
         valueFactory3 = //
-               new SpinnerValueFactory.ListSpinnerValueFactory<String>(orientaciones);
+               new SpinnerValueFactory.ListSpinnerValueFactory<>(orientaciones);
         
         valueFactory3.setValue("SUR");
  
@@ -113,31 +111,21 @@ public class DiseñoCasaController implements Initializable {
         
         
         
-        enBaño.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                banoTb.setDisable(!isNowSelected);
-            }});
-        enGasfiteria.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                gasfiteriaCombo.setDisable(!isNowSelected);
-            }});
-        enIluminacion.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                iluminacionCombo.setDisable(!isNowSelected);
-            }});
-        enPiso.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                pisosCombo.setDisable(!isNowSelected);
-            }});
-        enTecho.selectedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) {
-                techoCombo.setDisable(!isNowSelected);
-            }});
+        enBano.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            banoTb.setDisable(!isNowSelected);
+        });
+        enGasfiteria.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            gasfiteriaCombo.setDisable(!isNowSelected);
+        });
+        enIluminacion.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            iluminacionCombo.setDisable(!isNowSelected);
+        });
+        enPiso.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            pisosCombo.setDisable(!isNowSelected);
+        });
+        enTecho.selectedProperty().addListener((ObservableValue<? extends Boolean> obs, Boolean wasPreviouslySelected, Boolean isNowSelected) -> {
+            techoCombo.setDisable(!isNowSelected);
+        });
         
         patioTb.selectedProperty().addListener(((observable, oldValue, newValue) -> {
             String texto=(newValue)?"Grande":"Pequeño";
@@ -173,6 +161,7 @@ public class DiseñoCasaController implements Initializable {
             valueFactory3.setValue(casa.getOrientacion().toUpperCase());
             
             valueFactory2.setValue(casa.getMetrosCuadrados());
+            
             if (casa.getEsquinera().equals('1')){
                 posicionTb.setSelected(true);
             }else{
@@ -183,12 +172,9 @@ public class DiseñoCasaController implements Initializable {
             }else{
                 patioTb.setSelected(false);
             }
-            
-            
-            
+   
         }
-            
-        
+   
     }
     
 }

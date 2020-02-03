@@ -8,7 +8,7 @@ package vistas;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import conexion.Conexion2;
+
 import conexion.DBUtil;
 import java.io.IOException;
 
@@ -36,7 +36,7 @@ import modelos.Cliente;
 import modelos.Direccion;
 import modelos.Empresa;
 import modelos.Estadocivil;
-import org.hibernate.Session;
+
 
 /**
  * FXML Controller class
@@ -84,6 +84,8 @@ public class FormCliente1Controller implements Initializable {
     private SpinnerValueFactory<Integer> valueFactory;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -175,7 +177,7 @@ public class FormCliente1Controller implements Initializable {
         
         if (validador){
             DBUtil.agregar(cl);
-            System.out.println("Usuario escrito");
+           
             
             Parent root = FXMLLoader.load(getClass().getResource("InicioSesion.fxml"));
 
@@ -188,7 +190,7 @@ public class FormCliente1Controller implements Initializable {
             stage.show();
             stackPaneRoot.getScene().getWindow().hide();
         }
-        System.err.println("Tiene campos no validos");
+       
     }
 
 }
